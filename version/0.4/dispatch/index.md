@@ -1,3 +1,7 @@
+[Table of Contents](../index.md) | [Previous: Terminology](../terminology.md) | [Next: Forwarding](../forwarding.md)
+
+---
+
 Dispatch
 ========
 
@@ -10,44 +14,25 @@ Headers
 
 > All headers are case-insensitive.
 
-- [Protocol Header](protocol.md)
-
-- [Method Header](method.md)
-
+- [**Protocol** Header](protocol.md)
+- [**Method** Header](method.md)
   - [GET](method.md#get)
-
   - [POST](method.md#post)
-
   - [PUT](method.md#put)
-
   - [PATCH](method.md#patch)
-
   - [DELETE](method.md#delete)
-
   - [BIND](method.md#bind)
-
   - [RELEASE](method.md#release)
-
-- [Resource Header](resource.md)
-
-- [Timestamp Header](timestamp.md)
-
-- [Token Header](token.md)
-
-- [Host Header](host.md)
-
-- [Body Header](body.md)
-
-- [Endpoint Header](endpoint.md)
-
-- [Exception Header](exception.md)
-  
+- [**Resource** Header](resource.md)
+- [**Timestamp** Header](timestamp.md)
+- [**Token** Header](token.md)
+- [**Host** Header](host.md)
+- [**Body** Header](body.md)
+- [**Endpoint** Header](endpoint.md)
+- [**Exception** Header](exception.md)
   - [400 Bad Dispatch](exception.md#400-bad-dispatch)
-
   - [404 Not Found](exception.md#404-not-found)
-
   - [502 Not Gateway](exception.md#502-not-gateway)
-
   - [505 JSTP Version Not Supported](exception.md#505-jstp-version-not-supported)
 
 Extensions
@@ -55,3 +40,6 @@ Extensions
 
 _todo_
 
+---
+
+[Table of Contents](../index.md) | [Previous: Terminology](../terminology.md) | [Next: Forwarding](../forwarding.md)
