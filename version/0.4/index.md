@@ -115,6 +115,8 @@ This notation may be used for clarity since raw JSON can be messy, for example i
 
 - Application: the program to whose resources the Engine has access. In a broader sense may refer to the whole application topology of a distributed system.
 
+- Emitter: The application from which the current Dispatch in process came. If the Dispatch passed through a series of Gateways, it refers to the original application to create the Dispatch. The emitter application can be the same where the Dispatch is being processed.
+
 - Dispatch processing: The actual processing of a Dispatch, which usually implies triggering the correponding events.
 
 - Dispatch forwarding: Whenever an Engine finds that a Dispatch should be sent to another application, the Dispatch is forwarded to be processed in the remote application.
@@ -134,6 +136,8 @@ This notation may be used for clarity since raw JSON can be messy, for example i
 - Outbound: A JSTP connnection where the current engine has the client role.
 
 - Header: Any of the top level properties of the Dispatch object. For example: `protocol`, `method`, `body`...
+
+- Scalar: a non-empty string, boolean or numeral value.
 
 - Endpoint: A description of a method/resource pair where both the method may be replaced by a wildcard and the resource may be replaced partially ot totally by a wilcard. The endpoint is a pattern representing the ocurrence or a series of Dispatches. It is normalized and it is applied in subscriptions.
 
@@ -177,23 +181,55 @@ The method header represents the action to be performed on the identified resour
 
 > JSTP methods are much like HTTP methods, in fact JSTP supports almost all of them. If you are a REST developer, most of this will be familiar.
 
-##### 3.1.2.1 GET
+##### Method types
 
-_todo_
+JSTP Methods can be categorized as _Subscription_ and _Non-Subscription_ methods. Subscription methods include BIND and RELEASE. Non-Subscription methods are the others: GET, POST, PUT, DELETE and PATCH.
 
-##### 3.1.2.2 POST
+Non-Subscription methods deal with creating, querying, updating and destroying data. Any Non-Subscription Dispatch may be followed up by one or more PUT Dispatches sent from the target application back to the source application with the affected Resources in the Dispatch Body, but this is optional and left to the application's configuration.
 
-_todo_
+GET, DELETE and PATCH methods in particular are known as Assuming Methods, in the sense that they assume the selected Resource to exist. An application may issue a protocol-level 404 Not Found Exception Dispatch back to the emitter in the case that the Resource is not available.
 
-##### 3.1.2.3 PUT
+> This JSTP specification does not describe the subsequent Dispatches that an application may issue after a successful Non-Subscription Dispatch, but future updates might.  
 
-_todo_
+###### 3.1.2.1 GET
 
-##### 3.1.2.4 PATCH
+The GET method represents a request of data about the Resource. This is most obvious in an application providing access to a filesystem, where a Resource such as `["books"]` may return the listing of the `books` directory in the applications host.
 
-_todo_
+Another example would be to retrieve a record from a database: a GET Dispatch towards Resource `["articles", 356]` may retrieve the record with id `356` from the `articles` collection in the database.
 
-##### 3.1.2.5 DELETE
+Unlike HTTP, JSTP GET may include a body: since there is no query string, conditions on the request need to be sent in the body. 
+
+###### 3.1.2.2 POST
+
+The POST method represents the directive to create a new record within the selected Resource. It usually is completed with a Body with data to be inserted in the newly created record.
+
+Following the previous example, a POST Dispatch may be issued to the Resource `["articles"]` with the Body `{"text": "New article"}` and the application may create a record with the given text. 
+
+###### 3.1.2.3 PUT
+
+The PUT method represents the operation of inserting a record in the selected Resource. Unlike POST that selects the resource within which the record should be created, the Resource in a PUT Dispatch represents the exact address where the record should be created in the receiving application. The sent Body should replace any existing records in the Resource address.
+
+A PUT Dispatch may or may not feature a Body.
+
+For example, a PUT Dispatch with Resource `["links", 54]` and Body `{"href":"google.com"}` represents the directive to the application to create or update the record referenced by `["links", 54]` to contain the Body.
+
+###### 3.1.2.4 PATCH
+
+The PATCH method represents the directive to update one or more properties of the selected Resource. 
+
+For example, the following Dispatch:
+
+```javascript
+{
+  "protocol": ["JSTP", "0.4"],
+  "method": "PATCH",
+  "resource": ["papers", "physics", "quantum-mechanics"],
+  "timestamp": 1363410000,
+  "token": 
+}
+``` 
+
+###### 3.1.2.5 DELETE
 
 _todo_
 
@@ -207,8 +243,8 @@ _todo_
 
 #### 3.1.3 Resource
 
-- Type: Array of Strings
-- Elements: An arbitrarily long array containing non-empty strings that represent the selected Resource.
+- Type: Array of Scalars
+- Elements: An arbitrarily long array containing non-empty scalars that represent the selected Resource.
 - _Required_
 
 The Resource is to be interpreted as a resource in the application. It can represent, for example:
@@ -226,6 +262,10 @@ The resources can be accessed with several methods, so it may be possible to cre
 - _Required_
 
 The timestamp is a mandatory header. Its rationale is to simplify logging, synchronization and processing. 
+
+Gateways should not change the timestamp. 
+
+> As this draft, Exception Dispatches should not modify the Timestamp so that emitters can identify the faulty Dispatch; relying on the Timestamp is not robust enough and this should most likely be done using the Token header, but a standarization of the Token's elements has not been developed yet.
 
 #### 3.1.5 Token
 
@@ -390,10 +430,12 @@ and even
 
 The resource pattern is quite similar to a Resource header, but accepts two special wildcards as elements:
 
-- `*`: The asterisk wildcard may appear alone as an element in the resource pattern and matches any value on that position of the Resource. For example, the resource pattern `["drinks", "*"]` will match both the Resources `["drinks", "water"]` and `["drinks", "beer"]` and any other with "drinks" as first element and a second element.
+- `*`: The asterisk wildcard may appear alone as an element in the resource pattern and matches any value on that position of the Resource. For example, the resource pattern `["drinks", "*"]` will match both the Resources `["drinks", "water"]` and `["drinks", "beer"]` and any other with "drinks" as first element and a second element. 
 - `...`: The ellipsis wildcard (WARNING: not the special punctuation ellipsis character, but the ellipsis formed with three consecutive dots) may appear as the last element in the pattern and represents any amount of elements afterwards. For example, the pattern `["drinks", "..."]` will match both the Resources `["drinks", "soda"]` and `["drinks", "coke", "juice"]`. The ellipsis wildcard should be ignored when not used in the last position.
 
 String elements in the resource pattern will be matched against equal string, case sensitively. 
+
+The backslash character `\` escapes the pattern. For example `\*` will match exactly a `*`. `\...` will match exactly a `...`. In order to match the string `\*` the backslash must be escaped in the pattern, thus making it `\\*`. In the same way the `\...` string can be matched with the pattern `\\...`.
 
 > Future versions of JSTP may support the ellipsis wildcard in different positions.
 
@@ -522,6 +564,8 @@ _todo_
 (subscribe to remote hosts: bind tunnel)
 
 (jsstp: jstp secure)
+
+(support for integers in resources)
 
 9 Acknowledgements
 ------------------
