@@ -12,7 +12,7 @@ A Dispatch is conformed by a series of _Headers_. There are 9 supported Headers,
 Headers
 -------
 
-> All headers are case-insensitive.
+All JSTP native headers are case-insensitive, but it is strongly recommended for engines to send them in lowercase form.
 
 - [**Protocol** Header](protocol.md)
 - [**Method** Header](method.md)
@@ -38,7 +38,11 @@ Headers
 Extensions
 ----------
 
-_todo_
+JSTP Headers can be extended just by adding the properties to the Dispatch object. There are currently no restrictions as to what can be added as an Extension, but it is still recommended not to crowd Dispatches with a lot of extra options and make use of the Body and Token headers instead.
+
+Engines should disregard any unrecognized Extension Headers, although must not eliminate them so resources may use them.
+
+> Modifications of the properties or structure of a native Header beyond the guidelines are illegal and will raise a [400 Bad Dispatch](exception.md#400-bad-dispatch) Exception.
 
 ---
 
