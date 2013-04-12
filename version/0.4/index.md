@@ -24,7 +24,7 @@ JSTP/0.4 - JSON Transfer Protocol version 0.4
 Acknowledgements
 ----------------
 
-## Collaborators
+### Collaborators
 
 - [Fernando Vía Canel](https://github.com/xaviervia)
 - [Luciano Bertenasco](https://github.com/lbertenasco)
