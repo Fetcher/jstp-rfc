@@ -9,121 +9,29 @@ JSTP/0.4 - JSON Transfer Protocol version 0.4
 
 - [Terminology](terminology.md)
 
-- [Dispatch](dispatch/index.md)
+- [Dispatch](dispatch/index.md) 
 
-### 3.1 Headers
+- [Forwarding](forwarding.md)
 
-#### 3.1.3 
-#### 3.1.4 
+- [Subscription](subscription.md)
 
-#### 3.1.5 
+- [Engine](engine.md)
 
-#### 3.1.6 
+- [Changes since previous versions](changes.md)
 
-#### 3.1.7 
+- [Future](future.md)
 
-#### 3.1.8 
+Acknowledgements
+----------------
 
-#### 3.1.9 
-
-### 3.2 Extensions
-
-_todo_
-
-4 Forwarding
-------------
-
-_todo_
-
-5 Subscription
---------------
-
-_todo_
-
-### 5.1 Endpoints
-
-(pattern for "any amount of this"? such as ["foods", "..."])
-
-### 5.2 Subscription pool
-
-6 Engine
---------
-
-_todo_
-
-### 6.1 Networking
-
-(connection timeout??)
-_todo_
-
-#### 6.1.1 Transport protocols
-
-_todo_
-
-##### 6.1.1.1 TCP Sockets
-
-_todo_
-
-##### 6.1.1.2 Websockets
-
-_todo_
-
-#### 6.1.2 Environment
-
-_todo_
-
-### 6.2 Implementation guidelines
-
-_todo_
-
-#### 6.2.1 Version management
-
-_todo_
-
-#### 6.2.2 Tolerance and Quirks mode
-
-(tolerate null on optional headers)
-_todo_
-
-7 Changes since previous versions
----------------------------------
-
-(referer out)
-
-(gateway out)
-
-(host-as-first-item out)
-
-(new verbs and syntax for the new verbs)
-
-(endpoind header in)
-
-8 Future
---------
-
-8.1 Known issues
-
-(may be the dispatches are too long: what abount BSON?)
-
-8.1(other methods: options and head)
-
-(subscribe to remote hosts: bind tunnel)
-
-(jsstp: jstp secure)
-
-(support for integers in resources)
-
-9 Acknowledgements
-------------------
-
-### 5.1 Collaborators
+## Collaborators
 
 - [Fernando Vía Canel](https://github.com/xaviervia)
 - [Luciano Bertenasco](https://github.com/lbertenasco)
 - [Matías Domingues](https://github.com/mannias)
 
-10 License
-----------
+License
+-------
 
 Copyright (C) 2013 Fetcher & Collaborators
 

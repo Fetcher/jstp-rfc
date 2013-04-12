@@ -41,4 +41,17 @@ Headers
 - [Endpoint Header](endpoint.md)
 
 - [Exception Header](exception.md)
+  
+  - [400 Bad Dispatch](exception.md#400-bad-dispatch)
+
+  - [404 Not Found](exception.md#404-not-found)
+
+  - [502 Not Gateway](exception.md#502-not-gateway)
+
+  - [505 JSTP Version Not Supported](exception.md#505-jstp-version-not-supported)
+
+Extensions
+----------
+
+_todo_
 

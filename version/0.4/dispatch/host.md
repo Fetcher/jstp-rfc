@@ -15,9 +15,9 @@ If the host header is null or an empty string, the Dispatch must be processed in
 The first host in the list resolves to loopback
 -----------------------------------------------
 
-If the host header has only one element and the address resolves to the host where the application is running, the engine should either remove the host header or at least empty it, and afterwars process the Dispatch as stated in the previous section [3.1.6.2].
+If the host header has only one element and the address resolves to the host where the application is running, the engine should either remove the host header or at least empty it, and afterwars process the Dispatch as stated in the previous section.
 
-If the host header has many several elements and the first address resolves to the host where the application is running, the engine should remove the first item from the list of hosts and proceed as described in the next section [3.1.6.3].
+If the host header has many several elements and the first address resolves to the host where the application is running, the engine should remove the first item from the list of hosts and proceed as described in the next section.
 
 > Future versions of JSTP may support port selection. Some engines may implement a mechanism to parse a domain such as "localhost:77777" and use 77777 as the target JSTP engine port, but this is not normative.
 
@@ -33,4 +33,4 @@ It comes naturally that if a series of hosts were specified in the header, each 
 
 _Automatic Gateway_ makes the networks work like a series of VPNs, since each host may use a different domain server. This is quite useful when a client uses a public network and wants to access a resource inside a private one. 
 
-One caveat: _Automatic Gateway_ introduces security concerns, so applications may choose to disable this feature. If the engine is configured to not forward Dispatches, it should answer the source engine with an Exception Dispatch with `502 Not Gateway` as detailed in section 3.1.9.3.
+One caveat: _Automatic Gateway_ introduces security concerns, so applications may choose to disable this feature. If the engine is configured to not forward Dispatches, it should answer the source engine with an Exception Dispatch with [`502 Not Gateway`](exception.md#502-not-gateway).
