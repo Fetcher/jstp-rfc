@@ -14,6 +14,7 @@ JSTP is designed to:
 
 JSTP also aims to maintain quality standards and conventions of modern web applications:
 
+- Is readily avaible to modern browsers via [WebSockets](http://en.wikipedia.org/wiki/WebSocket).
 - JSTP is JSON, which makes it trivial to parse in modern programming languages.
 - The method and resource API closely resembles that of [Representational State Transfer (REST)](https://en.wikipedia.org/wiki/Representational_state_transfer), so is very natural to adopt for web developers.
 - Responses are sent asynchronously, thus making it fit for parallel processing and optimized for non-blocking, event-driven architectures.
@@ -21,6 +22,8 @@ JSTP also aims to maintain quality standards and conventions of modern web appli
 - Supports subscription ( _binding_ ) to events on remote hosts.
 - Supports seamless reflective subscription.
 - Arbitrary headers can be added with little to no hassle, making it easy to extend.
+
+Hybrid distributed applications that connect server-side and user agent nodes can benefit greatly from using a single protocol accross the entire architecture.
 
 Example
 -------
