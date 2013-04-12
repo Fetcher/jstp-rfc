@@ -1,26 +1,31 @@
+[Table of Contents](index.md) | [Next: Terminology](terminology.md)
+
+---
+
 Introduction
 ============
 
+The JSON Transfer Protocol (JSTP) is an application-level communication protocol for distributed computation systems.
 
-JSTP is a communication protocol designed to:
+JSTP is designed to:
 
 - Facilitate distributed computing with an abstract, high level API inspired in HTTP
 - Standarize interactions among applications connecting with different roles either as clients or servers
 
-JSTP is also designed to be up to the paradigm of modern applications:
+JSTP also aims to maintain quality standards and conventions of modern web applications:
 
 - JSTP is JSON, which makes it trivial to parse in modern programming languages.
-- The API closely resembles REST, so is very natural to adopt for web developers.
-- Responses are sent asynchronously, thus making it fit for parallel processing.
-- Messages ( _dispatches_ ) are symmetrical, so every node manages resources with the same API, whether is a server or a client node.
+- The method and resource API closely resembles that of [Representational State Transfer (REST)](https://en.wikipedia.org/wiki/Representational_state_transfer), so is very natural to adopt for web developers.
+- Responses are sent asynchronously, thus making it fit for parallel processing and optimized for non-blocking, event-driven architectures.
+- Messages ( _Dispatches_ ) are symmetrical, so every application manages resources with the same API, whether be it behaving as server or as client.
 - Supports subscription ( _binding_ ) to events on remote hosts.
-- Supports seamless reflective message processing.
+- Supports seamless reflective subscription.
 - Arbitrary headers can be added with little to no hassle, making it easy to extend.
 
 Example
 -------
 
-How does a regular JSTP Dispatch looks like?
+A regular JSTP looks like this:
 
 ```javascript
 {
@@ -37,9 +42,9 @@ How does a regular JSTP Dispatch looks like?
 }
 ```
 
-### Subscription example
+### Subscription Dispatch example
 
-A subscription Dispatch looks slightly different:
+A Subscription Dispatch looks slightly different:
 
 ```javascript
 {
@@ -56,9 +61,9 @@ A subscription Dispatch looks slightly different:
 }
 ```
 
-### Exception example
+### Exception Dispatch example
 
-A low level, exception Dispatch:
+A protocol-level, Exception Dispatch:
 
 ```javascript
 {
@@ -67,7 +72,7 @@ A low level, exception Dispatch:
   "token":      ["3434h5098asr34h3"],
   "exception": {                      // The exception header contents the information about the error
     "code": 400,                      // The status code. Shamelessly the same as the HTTP ones
-    "message": "Bad Dispatch"         // A description the error
+    "message": "Bad Dispatch"         // A description of the error
   }
 }
 ```
@@ -75,7 +80,9 @@ A low level, exception Dispatch:
 Notation
 --------
 
-JSTP Dispatches are designed from the bottom up to be as compatible with current industry standards as possible. That's why they can be represented as URLs. They can also be represented in a similar fashion to HTTP Requests. These notations are not normative and may not be supported in actual implementations.
+JSTP Dispatches are designed from the bottom up to be as compatible with HTTP as possible. That's why they can be represented as URLs. They can also be represented in a similar fashion to HTTP Requests. 
+
+> These notations are not normative and may not be supported in actual implementations.
 
 ### URL
 
@@ -85,7 +92,7 @@ The first sample Dispatch may be represented as an URL like this:
 
 This notation is useful to quickly build JSTP Dispatches from user input, as writing down the JSON by hand can be quite a burden.
 
-### HTTP⁻like syntax
+### HTTP-like syntax
 
 The first sample Dispatch may be represented in an HTTP-like notation like this:
 
@@ -98,4 +105,8 @@ token: 3434h5098asr34h3
 message: Let the cheese melt!
 ```
 
-This notation may be used for clarity since raw JSON can be messy, for example it can be used in log files. 
+This notation may be used for clarity since raw JSON can be messy. It can be used, for example, in log files. 
+
+---
+
+[Table of Contents](index.md) | [Next: Terminology](terminology.md)
