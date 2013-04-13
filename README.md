@@ -7,6 +7,9 @@ The JSTP premise/promise:
 
 > "A single protocol accross your entire server stack"
 
----
+Complete Specifications
+-----------------------
 
-[JSTP/0.4 Draft](version/0.4/index.md)
+Latest: [JSTP/0.4 Draft](version/0.4/index.md)
+
+Older: [JSTP/0.1 Draft](version/0.1/index.md)
