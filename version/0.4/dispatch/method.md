@@ -1,4 +1,4 @@
-[Dispatch](index.md) | [Previous: Protocol](protocol.md) | [Next: Resource](resource.md)
+[Dispatch](index.md) | [Previous: Protocol Header](protocol.md) | [Next: Resource Header](resource.md)
 
 ---
 
@@ -94,4 +94,4 @@ RELEASE Dispatches may carry a Body by the same rationale as BIND Dispatches.
 
 ---
 
-[Dispatch](index.md) | [Previous: Protocol](protocol.md) | [Next: Resource](resource.md)
+[Dispatch](index.md) | [Previous: Protocol Header](protocol.md) | [Next: Resource Header](resource.md)
