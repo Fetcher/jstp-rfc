@@ -1,3 +1,7 @@
+[Dispatch](index.md) | [Previous: Protocol](protocol.md) | [Next: Resource](resource.md)
+
+---
+
 Method Header
 =============
 
@@ -70,7 +74,7 @@ The DELETE method represents the directive to destroy the selected Resource.
 
 The BIND method represents the protocol-level directive to bind the emitting application to be notified upon the Processing of a Dispatch with a certain Method/Resource combination, as defined by the Endpoint pattern in the BIND Dispatch Header.
 
-BIND Dispatches must carry an [Endpoint Header](exception.md) containing the pattern to which the Emitter is to be bound. The Emitter can be the application running the Engine or some Remote application.
+BIND Dispatches must carry an [Endpoint Header](endpoint.md) containing the pattern to which the Emitter is to be bound. The Emitter can be the application running the Engine or some Remote application.
 
 BIND Dispatches may have a Body, since a previously bound Endpoint could have been configured to be triggered by the BIND Dispatch and may use the Body for some purpose. When used this way, the BIND method represents a session initialization for the Resources matched by the Endpoint, and its RELEASE counterpart, the finalization of the session.
 
@@ -78,4 +82,16 @@ BIND Dispatches may have a Body, since a previously bound Endpoint could have be
 
 ### RELEASE
 
-_todo_
+The RELEASE method represents the protocol-level directive to unbind the emitting appliation from the Endpoint. 
+
+RELEASE Dispatches must carry an [Endpoint Header](endpoint.md) with the pattern to be unbound from. After a RELEASE Dispatch is processed, the Emitter will no longer be triggered when a Dispatch matching the Endpoint pattern is processed.
+
+The RELEASE Dispatch Endpoint may match no existing Subscription. If that's the case, the Engine should send an 406 Not Binded Exception Dispatch back to the Emitter. 
+
+RELEASE Dispatches may carry a Body by the same rationale as BIND Dispatches.
+
+> When a client disconnects from an Engine, the Engine will automatically create and process a Body-less RELEASE Dispatch for each of its active Subscriptions. This will prevent the subscriptions to be triggered when the client is not available. For further details refer to the [Subscription](../subscription.md) section.
+
+---
+
+[Dispatch](index.md) | [Previous: Protocol](protocol.md) | [Next: Resource](resource.md)
