@@ -1,5 +1,12 @@
+[Dispatch](index.md) | [Next: Method Header](method.md)
+
+---
+
 Protocol Header
 ===============
+
+Summary
+-------
 
 - Type: Array of Strings.
 - Elements: 
@@ -12,3 +19,14 @@ The protocol header represents the JSTP protocol version that the emitting Engin
 The version number must be used by the receiving Engine to process the Dispatch according to the specifications of the JSTP version. If the engine is unable to process the Dispatch version it must send an Exception Dispatch back to the source.
 
 > The protocol header may be extended with further data to specify JSTP extensions.
+
+Sample
+------
+
+```javascript
+"protocol": ["JSTP", "0.4"]
+```
+
+---
+
+[Dispatch](index.md) | [Next: Method Header](method.md)
