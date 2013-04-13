@@ -45,7 +45,7 @@ For example, a PUT Dispatch with Resource `["links", 54]` and Body `{"href":"goo
 
 The PATCH method represents the directive to update one or more properties of the selected Resource. 
 
-For example, the following Dispatch:
+For example, upon processing the following Dispatch:
 
 ```javascript
 {
@@ -53,17 +53,28 @@ For example, the following Dispatch:
   "method": "PATCH",
   "resource": ["papers", "physics", "quantum-mechanics"],
   "timestamp": 1363410000,
-  "token": 
+  "token": ["4sF45fRtra"],
+  "body": {
+    "higgs-boson-existence": true
+  }
 }
 ``` 
 
+an application should update the `["papers", "physics", "quantum-mechanics"]` so that `higgs-boson-existence` is now equal to `true`.
+
 ### DELETE
 
-_todo_
+The DELETE method represents the directive to destroy the selected Resource. 
 
 ### BIND
 
-_todo_
+The BIND method represents the protocol-level directive to bind the emitting application to be notified upon the Processing of a Dispatch with a certain Method/Resource combination, as defined by the Endpoint pattern in the BIND Dispatch Header.
+
+BIND Dispatches must carry an [Endpoint Header](exception.md) containing the pattern to which the Emitter is to be bound. The Emitter can be the application running the Engine or some Remote application.
+
+BIND Dispatches may have a Body, since a previously bound Endpoint could have been configured to be triggered by the BIND Dispatch and may use the Body for some purpose. When used this way, the BIND method represents a session initialization for the Resources matched by the Endpoint, and its RELEASE counterpart, the finalization of the session.
+
+> For further details refer to the [Subscription](../subscription.md) section.
 
 ### RELEASE
 
