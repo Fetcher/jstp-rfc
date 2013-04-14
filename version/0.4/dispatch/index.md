@@ -32,6 +32,7 @@ All JSTP native headers are case-insensitive, but it is strongly recommended for
 - [**Exception** Header](exception.md)
   - [400 Bad Dispatch](exception.md#400-bad-dispatch)
   - [404 Not Found](exception.md#404-not-found)
+  - [406 Unbound Endpoint](exception.md#-unbound-endpoint)
   - [502 Not Gateway](exception.md#502-not-gateway)
   - [505 JSTP Version Not Supported](exception.md#505-jstp-version-not-supported)
 
