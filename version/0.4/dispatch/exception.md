@@ -34,6 +34,11 @@ Since in either case the Dispatch is assumed to be unrecoverable, no Method nor 
 
 _todo_ 
 
+406 Not Bound
+-------------
+
+_todo_
+
 502 Not Gateway
 ---------------
 
