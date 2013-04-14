@@ -34,8 +34,8 @@ Since in either case the Dispatch is assumed to be unrecoverable, no Method nor 
 
 _todo_ 
 
-406 Not Bound
--------------
+406 Unbound Endpoint
+--------------------
 
 _todo_
 
