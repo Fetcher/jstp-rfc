@@ -1,3 +1,7 @@
+[Dispatch](index.md) | [Previous: Resource Header](resource.md) | [Next: Token Header](token.md)
+
+---
+
 Timestamp Header
 ================
 
@@ -5,8 +9,12 @@ Timestamp Header
 - Element: The time when the Dispatch was issued in the UNIX time stamp format
 - _Required_
 
-The timestamp is a mandatory header. Its rationale is to simplify logging, synchronization and processing. 
+The Timestamp header is a mandatory header that represents the time when the Dispatch was generated. Its value must be the [UNIX timestamp](http://en.wikipedia.org/wiki/Unix_time) in its _long integer_ form. Its rationale is to simplify logging, synchronization and processing. 
 
-Gateways should not change the timestamp. 
+Since the Timestamp represents the time of generation, gateways must not change the timestamp. This will allow, among other things, to test application-level latency when the Dispatch is sent over a network.
 
-> As this draft, Exception Dispatches should not modify the Timestamp so that emitters can identify the faulty Dispatch; relying on the Timestamp is not robust enough and this should most likely be done using the Token header, but a standarization of the Token's elements has not been developed yet.
+The Timestamp is meant to be used by applications in order to set the creation or modification time of the affected resources that result of Dispatch processing.
+ 
+---
+
+[Dispatch](index.md) | [Previous: Resource Header](resource.md) | [Next: Token Header](token.md)
