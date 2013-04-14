@@ -86,7 +86,7 @@ The RELEASE method represents the protocol-level directive to unbind the emittin
 
 RELEASE Dispatches must carry an [Endpoint Header](endpoint.md) with the pattern to be unbound from. After a RELEASE Dispatch is processed, the Emitter will no longer be triggered when a Dispatch matching the Endpoint pattern is processed.
 
-The RELEASE Dispatch Endpoint may match no existing Subscription. If that's the case, the Engine should send an [406 Not Bound Exception](exception.md#406-not-bound) Dispatch back to the Emitter. 
+The RELEASE Dispatch Endpoint may match no existing Subscription. If that's the case, the Engine should send an [406 Unbound Endpoint Exception](exception.md#406-unbound-endpoint) Dispatch back to the Emitter. 
 
 RELEASE Dispatches may carry a Body by the same rationale as BIND Dispatches.
 
