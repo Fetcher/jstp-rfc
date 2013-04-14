@@ -7,8 +7,21 @@ All of callback in JSTP are added via subscription: so, for example, if a local 
 
 > Engine implementations may provide a simple API such a Domain Specific Language in order to simplify Local Binding.
 
-### 5.1 Endpoints
+Endpoints
+---------
 
-(pattern for "any amount of this"? such as ["foods", "..."])
+_todo_
 
-### 5.2 Subscription pool
+### Endpoint hierarchy
+
+_todo_
+
+Subscription pool
+-----------------
+
+_todo_
+
+Disconnect Release
+------------------
+
+_todo_
