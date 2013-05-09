@@ -1,6 +1,8 @@
 JSTP: JSON Transfer Protocol
 ============================
 
+> Real Time Web: the Protocol
+
 JSTP is a modern, symmetric, asynchronous communication protocol in JSON that works over several transport protocols with persistent connections.
 
 The JSTP premise/promise: 
