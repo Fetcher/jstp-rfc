@@ -1,3 +1,5 @@
+[Table of Contents](index.md) | [Previous: Introduction](introduction.md) | [Next: Dispatch](dispatch/index.md)
+
 Changes since previous versions
 ===============================
 
@@ -16,7 +18,6 @@ Vocabulary
   - The Answer Morphology: after a Dispatch with the ANSWER Method and a regulated Resource Header
 - Introduction of the terms "JSTP Transport Protocol" and "JSTP Transport Protocol Layer" to identify the array of possible transports in which JSTP can be sent (now known to be mainly plain TCP and Websockets).
 - Introduction of the term "Virtual Host" to identify valid Host Header values that mark a Dispatch to be forwarded, not over a network, but inside the application to a different JSTP engine.
-- Introduction of the term "Step" to identify an instance of a forwarding of a Dispatch over a Network or to a Virtual Host.
 - Introduction of the term "Subscriptions Table" to identify the list of bound endpoints in an Engine.
 
 Syntax
