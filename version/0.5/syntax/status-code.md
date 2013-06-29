@@ -1,3 +1,7 @@
+[Back: Syntax](index.md)
+
+---
+
 Status Codes
 ============
 
@@ -49,3 +53,7 @@ _todo_
 ------------------------------
 
 _todo_
+
+---
+
+[Back: Syntax](index.md)
