@@ -10,7 +10,7 @@ The JSON Transfer Protocol (JSTP) is an application-level communication protocol
 JSTP is designed to:
 
 - Facilitate distributed computing with an abstract, high level API inspired in HTTP
-- Standarize interactions among applications connecting with different roles either as clients or servers
+- Standarize interactions among applications connecting with each other playing different roles either as clients or servers.
 
 JSTP also aims to maintain quality standards and conventions of modern web applications:
 
@@ -27,6 +27,8 @@ Hybrid distributed applications that connect server-side and user agent nodes ca
 
 Example
 -------
+
+### Regular Morphology
 
 A regular JSTP looks like this:
 
@@ -45,9 +47,9 @@ A regular JSTP looks like this:
 }
 ```
 
-### Subscription Dispatch example
+### Subscription Morphology example
 
-A Subscription Dispatch looks slightly different:
+A Subscription Dispatch incorporates the Endpoint Header and has no Resource:
 
 ```javascript
 {
@@ -64,18 +66,22 @@ A Subscription Dispatch looks slightly different:
 }
 ```
 
-### Exception Dispatch example
+### Answer Morphology example
 
-A protocol-level, Exception Dispatch:
+A protocol-level, Answer Dispatch:
 
 ```javascript
 {
   "protocol":   ["JSTP", "0.4"],
-  "timestamp":  1365647440759,
+  "method":     "ANSWER",
+  "resource":   [
+      "238vs39598gweorit340trwgewrt", // The TransactionID
+      400
+    ],                                // The status code. Shamelessly borrowed from HTTP
   "token":      ["3434h5098asr34h3"],
-  "exception": {                      // The exception header contents the information about the error
-    "code": 400,                      // The status code. Shamelessly the same as the HTTP ones
-    "message": "Bad Dispatch"         // A description of the error
+  "timestamp":  1365647440759,
+  "body": { 
+    "message": "Bad Dispatch"         // A payload of the Answer (optional)
   }
 }
 ```
@@ -83,11 +89,9 @@ A protocol-level, Exception Dispatch:
 Notation
 --------
 
-JSTP Dispatches are designed from the bottom up to be as compatible with HTTP as possible. That's why they can be represented as URLs. They can also be represented in a similar fashion to HTTP Requests. 
+JSTP Dispatches are designed from the bottom up to be as compatible with HTTP as possible. That's why they can be represented as URLs. 
 
-> These notations are not normative and may not be supported in actual implementations.
-
-### URL
+### [JSTP URI Scheme](uri.md)
 
 The first sample Dispatch may be represented as an URL like this:
 
@@ -96,6 +100,10 @@ The first sample Dispatch may be represented as an URL like this:
 This notation is useful to quickly build JSTP Dispatches from user input, as writing down the JSON by hand can be quite a burden.
 
 ### HTTP-like syntax
+
+> This notation is not normative and may not be supported in actual implementations.
+
+Dispatches can also be represented in a similar fashion to HTTP Requests. 
 
 The first sample Dispatch may be represented in an HTTP-like notation like this:
 
@@ -112,4 +120,4 @@ This notation may be used for clarity since raw JSON can be messy. It can be use
 
 ---
 
-[Table of Contents](index.md) | [Next: Terminology](terminology.md)
+[Table of Contents](index.md) | [Next: URI](uri.md)
