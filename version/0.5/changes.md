@@ -1,4 +1,6 @@
-[Table of Contents](index.md) | [Previous: Introduction](introduction.md) | [Next: Dispatch](dispatch/index.md)
+[Table of Contents](index.md) | [Previous: Introduction](introduction.md) | [Next: Vocabulary](vocabulary.md)
+
+---
 
 Changes since previous versions
 ===============================
@@ -38,18 +40,31 @@ Syntax
 Engine
 ------
 
-- [Answer] Instructions to Engines to:
-  - Identify the Emitters willingness to receive an Answer (by storing a provided Answer Callback, IF there is an Answer Callback).
-  - Generate the Transaction ID.
-  - Bind the correct Endpoints for the Answer to be received.
-  - Upon processing of the Answer, Release the Endpoints.
+### Answer
 
-- [Robustness] Instructions to Engines to:
-  - Always attempt to reconnect lost outgoing connections to remote engines.
-  - Once reconnected, always forward the Endpoints which are currently bound locally but are aimed at the remote engine.
+Instructions to Engines to:
 
-- [Security & Usability] Intruction to Engines to provide a configuration tool for the developer to configure the default behaviours, specifically:
-  - Automatic gateway functionality
-  - Implementation Disclosure (for the 5xx Status Codes in the Answer Dispatches).
-  - Automatic reconnection attempt
-  - Reconnection attempt timespan
+- Identify the Emitters willingness to receive an Answer (by storing a provided Answer Callback, IF there is an Answer Callback).
+- Generate the Transaction ID.
+- Bind the correct Endpoints for the Answer to be received.
+- Upon processing of the Answer, Release the Endpoints.
+
+### Robustness
+
+Instructions to Engines to:
+
+- Always attempt to reconnect lost outgoing connections to remote engines.
+- Once reconnected, always forward the Endpoints which are currently bound locally but are aimed at the remote engine.
+
+### Security & Usability
+
+Intruction to Engines to provide a configuration tool for the developer to configure the default behaviours, specifically:
+
+- Automatic gateway functionality
+- Implementation Disclosure (for the 5xx Status Codes in the Answer Dispatches).
+- Automatic reconnection attempt
+- Reconnection attempt timespan
+
+---
+
+[Table of Contents](index.md) | [Previous: Introduction](introduction.md) | [Next: Vocabulary](vocabulary.md)
