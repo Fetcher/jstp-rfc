@@ -11,8 +11,6 @@ Table of Contents
 4. [Vocabulary](vocabulary.md)
 3. [JSTP URI Scheme](uri.md)
 5. [Dispatch](dispatch/index.md) 
-6. [Forwarding](forwarding.md)
-7. [Subscription](subscription.md)
 8. [Engine](engine.md)
 
 Older Versions
