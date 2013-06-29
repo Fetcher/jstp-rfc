@@ -1,3 +1,7 @@
+[Syntax](index.md) | [Previous: Timestamp Header](timestamp.md) | [Next: Host Header](host.md)
+
+---
+
 Token Header
 ============
 
@@ -18,3 +22,7 @@ For example, an application may keep track of the session token to identify the 
 This header is specially useful in the context of a distributed application where Dispatches that represent requests start computation in different applications that issue Dispatches that represent replies to that request.
 
 The specifics of the order, format and usage of the tokens are not defined in this specification.
+
+---
+
+[Syntax](index.md) | [Previous: Timestamp Header](timestamp.md) | [Next: Host Header](host.md)
