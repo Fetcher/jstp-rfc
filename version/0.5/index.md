@@ -7,9 +7,9 @@ Table of Contents
 -----------------
 
 1. [Introduction](introduction.md)
-2. [Changes since previous versions](changes.md)
+2. [Changes since the previous versions](changes.md)
+4. [Vocabulary](vocabulary.md)
 3. [JSTP URI Scheme](uri.md)
-4. [Terminology](terminology.md)
 5. [Dispatch](dispatch/index.md) 
 6. [Forwarding](forwarding.md)
 7. [Subscription](subscription.md)

@@ -1,8 +1,11 @@
 Status Codes
 ============
 
-JSTP supports a vocabulary of Status Codes analog to that of [HTTP](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
-The exception header represents the description of a protocol level exception that prevented the Dispatch from being processed altogether. A Dispatch featuring an Exception header is called an Exception Dispatch and it should be returned to the source of the Dispatch whenever is possible. 
+JSTP supports a vocabulary of Status Codes analog to that of [HTTP](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html), while greatly reduced in quantity due both to Status Codes being less prominent in JSTP and many HTTP scenarios not applying in JSTP.
+
+JSTP Status Codes are used as the second element of the Resource Header in the context of an Answer Dispatch and are part of the [Answer Morphology](index.md#answer-morphology). For more discussion on the behaviour of the Answer Morphology see the [Answer instructions for the Engines](../engine.md#answer). 
+
+A Dispatch featuring an Exception header is called an Exception Dispatch and it should be returned to the source of the Dispatch whenever is possible. 
 
 An Exception Dispatch may or may not have a Method and a Resource depending on the type of the exception. 
 

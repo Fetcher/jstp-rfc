@@ -1,4 +1,4 @@
-[Table of Contents](index.md) | [Next: Terminology](terminology.md)
+[Table of Contents](index.md) | [Next: Changes since the previous version](changes.md)
 
 ---
 
@@ -28,6 +28,8 @@ Hybrid distributed applications that connect server-side and user agent nodes ca
 Example
 -------
 
+JSTP messages (called Dispatches) can adopt three alternative Morphologies.
+
 ### Regular Morphology
 
 A regular JSTP looks like this:
@@ -47,7 +49,7 @@ A regular JSTP looks like this:
 }
 ```
 
-### Subscription Morphology example
+### Subscription Morphology
 
 A Subscription Dispatch incorporates the Endpoint Header and has no Resource:
 
@@ -66,7 +68,7 @@ A Subscription Dispatch incorporates the Endpoint Header and has no Resource:
 }
 ```
 
-### Answer Morphology example
+### Answer Morphology
 
 A protocol-level, Answer Dispatch:
 
@@ -120,4 +122,4 @@ This notation may be used for clarity since raw JSON can be messy. It can be use
 
 ---
 
-[Table of Contents](index.md) | [Next: URI](uri.md)
+[Table of Contents](index.md) | [Next: Changes since the previous version](changes.md)
