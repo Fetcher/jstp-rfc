@@ -1,3 +1,7 @@
+[Syntax](index.md) | [Previous: Token Header](token.md) | [Next: Body Header](body.md)
+
+---
+
 Host Header
 ===========
 
@@ -34,3 +38,7 @@ It comes naturally that if a series of hosts were specified in the header, each 
 _Automatic Gateway_ makes the networks work like a series of VPNs, since each host may use a different domain server. This is quite useful when a client uses a public network and wants to access a resource inside a private one. 
 
 One caveat: _Automatic Gateway_ introduces security concerns, so applications may choose to disable this feature. If the engine is configured to not forward Dispatches, it should answer the source engine with an Exception Dispatch with [`502 Not Gateway`](exception.md#502-not-gateway).
+
+---
+
+[Syntax](index.md) | [Previous: Token Header](token.md) | [Next: Body Header](body.md)
