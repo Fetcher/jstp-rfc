@@ -10,7 +10,7 @@ Table of Contents
 2. [Changes since the previous versions](changes.md)
 4. [Vocabulary](vocabulary.md)
 3. [JSTP URI Scheme](uri.md)
-5. [Dispatch](dispatch/index.md) 
+5. [Syntax](syntax/index.md) 
 8. [Engine](engine.md)
 
 Older Versions
