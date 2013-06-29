@@ -1,4 +1,4 @@
-[Dispatch](index.md) | [Previous: Resource Header](resource.md) | [Next: Token Header](token.md)
+[Syntax](index.md) | [Previous: Resource Header](resource.md) | [Next: Token Header](token.md)
 
 ---
 
@@ -17,4 +17,4 @@ The Timestamp is meant to be used by applications in order to set the creation o
  
 ---
 
-[Dispatch](index.md) | [Previous: Resource Header](resource.md) | [Next: Token Header](token.md)
+[Syntax](index.md) | [Previous: Resource Header](resource.md) | [Next: Token Header](token.md)
