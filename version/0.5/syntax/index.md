@@ -1,4 +1,4 @@
-[Table of Contents](../index.md) | [Previous: Terminology](../terminology.md) | [Next: Forwarding](../forwarding.md)
+[Table of Contents](../index.md) | [Previous: Vocabulary](../vocabulary.md) | [Next: Engine](../engine.md)
 
 ---
 
@@ -123,4 +123,4 @@ Note that the Referer is not as much illegal as irrelevant, because the Emitter 
 
 ---
 
-[Table of Contents](../index.md) | [Previous: Terminology](../terminology.md) | [Next: Forwarding](../forwarding.md)
+[Table of Contents](../index.md) | [Previous: Vocabulary](../vocabulary.md) | [Next: Engine](../engine.md)
