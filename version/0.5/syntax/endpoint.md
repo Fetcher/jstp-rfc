@@ -1,3 +1,7 @@
+[Syntax](index.md) | [Previous: Body Header](host.md)
+
+---
+
 Endpoint Header
 ===============
 
@@ -110,3 +114,7 @@ String elements in the resource pattern will be matched against equal string, ca
 The backslash character `\` escapes the pattern. For example `\*` will match exactly a `*`. `\...` will match exactly a `...`. In order to match the string `\*` the backslash must be escaped in the pattern, thus making it `\\*`. In the same way the `\...` string can be matched with the pattern `\\...`.
 
 > Future versions of JSTP may support the ellipsis wildcard in different positions.
+
+---
+
+[Syntax](index.md) | [Previous: Body Header](host.md)
