@@ -9,14 +9,21 @@ JSTP supports a vocabulary of Status Codes analog to that of [HTTP](http://www.w
 
 JSTP Status Codes are used as the second element of the Resource Header in the context of an Answer Dispatch and are part of the [Answer Morphology](index.md#answer-morphology). For more discussion on the behaviour of the Answer Morphology see the [Answer instructions for the Engines](../engine.md#answer). 
 
-A Dispatch featuring an Exception header is called an Exception Dispatch and it should be returned to the source of the Dispatch whenever is possible. 
+The Status Codes represent the type of the answer. Unlike HTTP, JSTP does not send the message description of the Status Code in the Dispatch since is not intended for humans to read, but each Status Code has a description in the recommendation.
 
-An Exception Dispatch may or may not have a Method and a Resource depending on the type of the exception. 
+200: Ok
+-------
 
-The code property represents the code of the exception and the message represents a human-readable description of the exception.
-
-> The code property values have mostly been borrowed from HTTP so to lower the entrance barrier for web developers to JSTP.
-
+The 200 
+400 Bad Dispatch
+401 Unauthorized
+403 Forbidden
+404 Not Found
+405 Method Not Allowed
+500 Internal Error
+501 Not Implemented
+502 Unreachable Remote Host
+505 JSTP Version Not Supported
 400 Bad Dispatch
 ----------------
 
