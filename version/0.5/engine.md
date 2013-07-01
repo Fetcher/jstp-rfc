@@ -60,6 +60,10 @@ Breaking it down:
 
 The object model of the Dispatch is a class called `JSTPDispatch`. The JSTPDispatch class should provide getter and setter methods for each of the Headers.
 
+#### `JSTPCallback`
+
+The function callback _(todo)_
+
 Processing
 ----------
 
