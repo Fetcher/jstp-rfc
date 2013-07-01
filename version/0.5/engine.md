@@ -1,7 +1,62 @@
+[Table of Contents](index.md) | [Previous: Syntax](syntax/index.md)
+
+---
+
 Engine
 ======
 
-_todo_
+The JSTP Engine is a running instance of an actual implementation of JSTP. Applications can run several Engines listening in an arbitrary amount of ports in several Transport Protocols. This flexibility is one of the features of JSTP.
+
+An Engine must be able to perform certain basic tasks of a core functionality and offer a at least a minimal API for application resources to consume. Both the basic functionality and the minimal API that are required for Engines are described in this section, which should be taken as a reference by implementation developers.
+
+#### API
+
+For the API, the Engine is described as the `JSTPEngine` class, that JSTP libraries in object oriented languages should implement.
+
+##### Dispatch
+
+The object model of the Dispatch is a class called `JSTPDispatch`. The JSTPDispatch class should provide getter and setter methods for each of the Headers.
+
+Processing
+----------
+
+**Dispatch Processing** is the intepretation by the Engine of the directives contained in a certain JSTP Dispatch. During the Processing the Engines (in this order): 
+
+1. Determines the syntactic correctness of the Dispatch that the Emitter provided.
+2. Determines whether or not the Dispatch is to be Forwarded, both over a network (and consequently in some of Transport Protocol) or to a Virtual Host.
+3. Identifies if the Morphology of the Dispatch is of Subscription type. That being the case, either binds or releases the provided Subscription Callback in the Subscription Context.
+4. If the Emitter provided an Answer Callback and emits immediatly a Subscription Dispatch to itself with the same Host Header as the Dispatch in process but aimed at the Answer Dispatch for the Transaction ID of this Dispatch.
+5. If there was nothing in the Host Header, triggers the Dispatch. 
+
+#### API
+
+The `#dispatch` instance method of the Engine handles the processing of the Dispatch. The function prototype of `JSTPEngine#dispatch` is as follows:
+
+```c
+JSTPDispatch dispatch( JSTPDispatch dispatch [, Function callback [, Object context ]])
+```
+
+### 1. Validation
+
+The first step is to validate the Dispatch sent by the Emitter. In strongly typed programming languages Dispatches may be already checked for compliance in the construction of the `JSTPDispatch` object; in more looosely type ones, the Engine may look for missing or malformed Headers.
+
+The [Syntax](syntax/index.md) section of this reference specifies data types and restrictions for each Header.
+
+If the validation fails the Engine must generate immediately an Answer Dispatch with the 400: Bad Dispatch Status Code. If the Dispatch comes from a Local Emitter  for the corresponding Transaction ID. The Engine must alg
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
 
 Forwarding
 ----------
@@ -73,8 +128,8 @@ _todo_
 
 _todo_
 
-Implementation guidelines
--------------------------
+Configuration
+-------------
 
 _todo_
 
@@ -86,3 +141,12 @@ _todo_
 
 (tolerate null on optional headers)
 _todo_
+
+API Extras
+----------
+
+1. Method shorthands
+
+---
+
+[Table of Contents](index.md) | [Previous: Syntax](syntax/index.md)
