@@ -1,4 +1,4 @@
-[Table of Contents](index.md) | [Next: Changes since the previous version](changes.md)
+[Table of Contents](index.md) | [Next: Vocabulary](vocabulary.md)
 
 ---
 
@@ -122,4 +122,4 @@ This notation may be used for clarity since raw JSON can be messy. It can be use
 
 ---
 
-[Table of Contents](index.md) | [Next: Changes since the previous version](changes.md)
+[Table of Contents](index.md) | [Next: Vocabulary](vocabulary.md)
