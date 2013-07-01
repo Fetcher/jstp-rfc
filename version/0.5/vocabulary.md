@@ -27,6 +27,8 @@ Vocabulary
 
 **Transaction ID**: A [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) identifying the generated Dispatch. When used, it must be the first element of the Token Header. 
 
+**Source Dispatch**: The Dispatch which Transaction ID the Answer Dispatch features as the first item in the Resource Header. In other words, the Dispatch to which the Answer Dispatch is answering.
+
 **Application**: the program in whose process the Engine runs. In a broader sense may refer to the whole application topology of a distributed system using JSTP.
 
 **Dispatch processing**: The actual processing of a Dispatch, which usually implies triggering the correponding events.
