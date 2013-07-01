@@ -11,6 +11,10 @@ Vocabulary
 
 **Emitter**: The generator of the Dispatch. If the Dispatch passed through a series of Gateways, it refers to the original generator. The Emitter can reside in the same application as the Engine where the Dispatch is being processed.
 
+**Local Emitter**: An Emitter residing in the same application process as the current Engine.
+
+**Remote Emitter**: The Emitter of a Dispatch that was forwarded to the current Engine by another Engine.
+
 **Morphology**: A configuration of the Headers of a JSTP Dispatch designed to fulfill an specific purpose with differentiated Engine mechanics. Can be seen as a dialect of subset of JSTP.
 
 **Callback**: A programming routine (typically an object's method) to be called by a JSTP Engine when the Endpoint to which the Callback is Subscribed gets triggered by a Dispatch in process.
