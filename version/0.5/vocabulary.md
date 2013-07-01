@@ -1,4 +1,4 @@
-[Table of Contents](index.md) | [Previous: Changes since the previous version](changes.md) | [Next: JSTP URI Scheme](uri.md)
+[Table of Contents](index.md) | [Previous: Introduction](introduction.md) | [Next: JSTP URI Scheme](uri.md)
 
 ---
 
@@ -63,4 +63,4 @@ Vocabulary
 
 ---
 
-[Table of Contents](index.md) | [Previous: Changes since the previous version](changes.md) | [Next: JSTP URI Scheme](uri.md)
+[Table of Contents](index.md) | [Previous: Introduction](introduction.md) | [Next: JSTP URI Scheme](uri.md)
