@@ -33,8 +33,16 @@ Processing
 The `#dispatch` instance method of the Engine handles the processing of the Dispatch. The function prototype of `JSTPEngine#dispatch` is as follows:
 
 ```c
-JSTPDispatch dispatch( JSTPDispatch dispatch [, Function callback [, Object context ]])
+JSTPDispatch dispatch( JSTPDispatch dispatch [, JSTPStatus Function callback (JSTPDispatch answer [, JSTPDispatch triggering]) [, Object context ]])
 ```
+
+Lets break it down a little:
+
+1. The return value of the `#dispatch` method must be a JSTPDispatch instance representing the same Dispatch that got processed, including all Header values filled in by the Engine, such as the Timestamp and the Protocol Headers. 
+2. The name of the method in the Engine instance must be `dispatch`.
+3. The first argument must be the partially or completely formed Dispatch to be processed.
+4. The optional function callback must accept one argument if the Dispatch is a Regular Dispatch and two arguments if the Dispatch is a BIND Subscription Dispatch. If the Dispatch is a RELEASE Subscription Dispatch, the function callback should be already bound in the Engine otherwise it will have no effect.
+5. The optional context provides a binding for the callback when executed by the Engine. Depending on the language details and the applications architrecture the context will be more or less important.
 
 ### 1. Validation
 
