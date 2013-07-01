@@ -39,6 +39,14 @@ _Automatic Gateway_ makes the networks work like a series of VPNs, since each ho
 
 One caveat: _Automatic Gateway_ introduces security concerns, so applications may choose to disable this feature. If the engine is configured to not forward Dispatches, it should answer the source engine with an Exception Dispatch with [`502 Not Gateway`](exception.md#502-not-gateway).
 
+Virtual Host
+------------
+
+_todo_
+
+
+If the host item has nor port neither protocol, it is assumed that it is referring to a Virtual Host.
+
 ---
 
 [Syntax](index.md) | [Previous: Token Header](token.md) | [Next: Body Header](body.md)
