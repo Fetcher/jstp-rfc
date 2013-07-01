@@ -3,6 +3,11 @@ JSTP/0.5 - JSON Transfer Protocol version 0.5
 
 > This document is a work in progress. For discussion please refer to the [issue tracker](https://github.com/southlogics/jstp-rfc/issues) on this repository.
 
+Roadmap
+-------
+
+You can find the [version 0.5 Roadmap](https://github.com/southlogics/jstp-rfc/issues/17) and the updated status of its implementation as an [issue in the issue tracker](https://github.com/southlogics/jstp-rfc/issues/17) for the specification repository.
+
 Table of Contents
 -----------------
 
