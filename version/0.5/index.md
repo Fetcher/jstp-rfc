@@ -12,7 +12,6 @@ Table of Contents
 -----------------
 
 1. [Introduction](introduction.md)
-2. [Changes since the previous versions](changes.md)
 4. [Vocabulary](vocabulary.md)
 3. [JSTP URI Scheme](uri.md)
 5. [Syntax](syntax/index.md) 
