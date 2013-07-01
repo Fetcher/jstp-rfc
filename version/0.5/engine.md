@@ -120,6 +120,10 @@ The Host Forwarding gateway functionality is opt-out: it can be configured to be
 
 _todo_
 
+### Virtual Host Forwarding
+
+_todo_
+
 Subscription
 ------------
 
