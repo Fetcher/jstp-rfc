@@ -31,7 +31,7 @@ Lets break it down a little:
 4. The optional function callback must accept:
   - [required] A `JSTPEngine` as the first argument. This will be the Engine executing the callback. Useful for both answers and subsequent Dispatches.
   - [required] A `JSTPDispatch` as the second argument. This will be the ANSWER Dispatch if the callback is executed by an Answer Dispatch
-  - [required for BIND Subscription Dispatches only] A `JSTPDispatch` as the third argument. This will be the Dispatch that triggered the callback execution.
+  - [required for BIND Subscription Dispatches only] A `JSTPDispatch` as the third argument. This will be the Dispatch that triggered the callback execution. If this callback is missing in a BIND Subscription Dispatch, the Dispatch is aborted with no Answer (since there is no callback to send the Answer). The Engine might throw a `JSTPMissingCallbackExcpetion`.
   
   The function callback should be present in every BIND Subscription Dispatch, since otherwise nothing will be bound to the Dispatch Endpoint.
   
@@ -148,6 +148,10 @@ _todo_
 ### Disconnect Release
 
 _todo_
+
+### Missing callback
+
+If a BIND Subscription Dispatch is emitted without callback, the Engine must abort the execution and might throw a `JSTPMissingCallbackException` but should not generate an Answer since there it no callback to send it.
 
 Answer
 ------
