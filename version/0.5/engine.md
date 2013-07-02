@@ -154,7 +154,7 @@ Answer
 
 When an Engine process a Dispatch to which the Emitter provided a Callback (or a Forwarded Dispatch with a Transaction ID), the Engine must generate and process a Subscription Dispatch to bind the Callback (or Remote Engine if it is Forwarded Dispatch) to and Endpoint for the ANSWER method and a Resource with the Transaction ID as the first item and a Wildcard as the second item.
 
-If the Dispatch is to be forwarded, it must forward the Dispatch. If the Dispatch is to be processed locally, the Engine must keep track of each triggered Subscription and to do that it must:
+If the Dispatch is to be forwarded, it must forward the Dispatch. If the Dispatch is to be processed locally, the Engine must keep track of each triggered Subscription, and to do that, it must:
 
 - Generate an ID (UUID, incremental ID) that is unique to each Subscription Triggering (called the "Triggering ID")
 - Assign the "Triggering ID" as the second item in the Token Header.
