@@ -35,6 +35,8 @@ Vocabulary
 
 **Dispatch forwarding**: Whenever an Engine finds that a Dispatch should be sent to another application, the Dispatch is forwarded to be processed in the remote application.
 
+**Forwarded Dispatch**: A Dispatch that was sent to this Engine by another Engine over a network or using the current Engine as a Virtual Host.
+
 [**Method**](syntax/method.md): The action to be performed on the identified resource. It can be any of the valid method verbs: [GET](syntax/method.md#get), [POST](syntax/method.md#post), [PUT](syntax/method.md#put), [PATCH](syntax/method.md#patch), [DELETE](syntax/method.md#delete), [BIND](syntax/method.md#bind) or [RELEASE](syntax/method.md#release).
 
 [**Resource**](syntax/resource.md): The address of an actionable resource within the target application.
