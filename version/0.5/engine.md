@@ -152,6 +152,27 @@ _todo_
 Answer
 ------
 
+When an Engine process a Dispatch to which the Emitter provided a Callback (or a Forwarded Dispatch with a Transaction ID), the Engine must generate and process a Subscription Dispatch to bind the Callback (or Remote Engine if it is Forwarded Dispatch) to and Endpoint for the ANSWER method and a Resource with the Transaction ID as the first item and a Wildcard as the second item.
+
+If the Dispatch is to be forwarded, it must forward the Dispatch. If the Dispatch is to be processed locally, the Engine must keep track of each triggered Subscription and to do that it must:
+
+- Generate an ID (UUID, incremental ID) that is unique to each Subscription Triggering (called the "Triggering ID")
+- Assign the "Triggering ID" as the second item in the Token Header.
+
+The callbacks should generate an Answer using both the Transaction ID and the Triggering ID. If a callback fails to provide a valid Transaction/Triggering ID pair in the Answer, the Engine must generate a 406 Not Acceptable Answer Dispatch and, if the Answer provided a callback, execute the callback with the Not Acceptable Dispatch.
+
+If the callback generates more than one Answer with the Transaction/Triggering ID pair, the Engine must generate a 406 Not Acceptable Answer Dispatch for each subsequent Answer after the first one and if the Answer provided a callback, execute the callback with the Not Acceptable Dispatch.
+
+If the callback emits a valid Answer once the Timeout if finished, the Engine must generate a 406 Not Acceptable Answer Dispatch and, if the Answer provided a callback, execute the callback with the Not Acceptable Dispatch.
+
+### Timeout
+
+Once all Subscriptions had been triggered, the Engine must start a timeout countdown (default may be 10 seconds) that, once finished, must look for Triggering IDs that have not been Answered and:
+
+1. Generate and process and 504 Timeout Answer Dispatch for the unanswered Subscriptions
+2. RELEASE the Answer Subscription
+3. If the Source Dispatch was a Forwarded Dispatch, forward the RELEASE to the emitting Engine.
+
 Networking
 ----------
 
