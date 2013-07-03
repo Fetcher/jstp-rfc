@@ -36,10 +36,12 @@ The Bad Dispatch exception type should be sent when the processed Dispatch has o
 - Some required headers are missing 
 - The content of some required headers is missing or malformed
 - The engine was unable to parse the JSON serialization
+- Malformed Endpoint Header
 
 Since in either case the Dispatch is assumed to be unrecoverable, no Method nor Resource should be sent in the Exception Dispatch.
 
 > For the dis _todo_
+
 > For tolerance to malformed Dispatches in the engine implementation please see section [6.2.2] Tolerance and Quirks Mode
 
 404 Not Found
