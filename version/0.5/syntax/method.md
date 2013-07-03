@@ -96,7 +96,9 @@ RELEASE Dispatches may carry a Body by the same rationale as BIND Dispatches.
 
 The ANSWER method represents the Answer to another Dispatch, identified by the Transaction ID as the second item in the Resource:
 
-The Resource Header is formalized for Answer Dispatches, and must be construction with a [Status Code](status-code.md) as the first item, the Transaction ID of the Source Dispatch as the second item and the Triggering ID of the callback making the Answer as the third item. Engines should answer with a [400 Bad Dispatch](status-code.md#400-bad-dispatch) if the Answer Dispatch Resource is otherwise structured and with a [406 Not Acceptable](status-code.md#406-not-acceptable) if the Transaction ID or the Triggering ID are invalid.
+The Resource Header is formalized for Answer Dispatches, and must be construction with a [Status Code](status-code.md) as the first item, the Transaction ID of the Source Dispatch as the second item and, if there is one, the Triggering ID of the callback making the Answer as the third item. Engines should answer with a [400 Bad Dispatch](status-code.md#400-bad-dispatch) if the Answer Dispatch Resource is otherwise structured and with a [406 Not Acceptable](status-code.md#406-not-acceptable) if the Transaction ID or the Triggering ID are invalid.
+
+> The Triggering ID shall not be present in 400 Bad Dispatch and 406 Not Acceptable Answers, because they are not processed but just sent directly to the provided Callback, if any.
 
 ---
 
