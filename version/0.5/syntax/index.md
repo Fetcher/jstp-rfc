@@ -1,4 +1,4 @@
-[Table of Contents](../index.md) | [Previous: Vocabulary](../vocabulary.md) | [Next: Engine](../engine.md)
+[Table of Contents](../index.md) | [Previous: JSTP URI Scheme](../uri.md) | [Next: Engine](../engine.md)
 
 ---
 
@@ -126,4 +126,4 @@ Note that the Referer is not as much illegal as irrelevant, because the Emitter 
 
 ---
 
-[Table of Contents](../index.md) | [Previous: Vocabulary](../vocabulary.md) | [Next: Engine](../engine.md)
+[Table of Contents](../index.md) | [Previous: JSTP URI Scheme](../uri.md) | [Next: Engine](../engine.md)
