@@ -20,6 +20,7 @@ The 200
 403 Forbidden
 404 Not Found
 405 Method Not Allowed
+409 Unrecognized Transport Protocol
 500 Internal Error
 501 Not Implemented
 502 Unreachable Remote Host
@@ -50,6 +51,11 @@ _todo_
 --------------------
 
 _todo_
+
+409 Unrecognized Transport Protocol
+-----------------------------------
+
+This means that the Host Header features a Transport Protocol that is not supported by this implementation.
 
 502 Not Gateway
 ---------------
