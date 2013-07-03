@@ -78,7 +78,7 @@ BIND Dispatches must carry an [Endpoint Header](endpoint.md) containing the patt
 
 BIND Dispatches may have a Body, since a previously bound Endpoint could have been configured to be triggered by the BIND Dispatch and may use the Body for some purpose. When used this way, the BIND method represents a session initialization for the Resources matched by the Endpoint, and its RELEASE counterpart, the finalization of the session.
 
-> For further details refer to the [Subscription](../subscription.md) section.
+> For further details refer to the [Subscription](../engine.md#subscription) section.
 
 ### RELEASE
 
@@ -91,6 +91,12 @@ The RELEASE Dispatch Endpoint may match no existing Subscription. If that's the 
 RELEASE Dispatches may carry a Body by the same rationale as BIND Dispatches.
 
 > When a client disconnects from an Engine, the Engine will automatically create and process a Body-less RELEASE Dispatch for each of its active Subscriptions. This will prevent the subscriptions to be triggered when the client is not available. For further details refer to the [Subscription](../subscription.md) section.
+
+### ANSWER
+
+The ANSWER method represents the Answer to another Dispatch, identified by the Transaction ID as the second item in the Resource:
+
+The Resource Header is formalized for Answer Dispatches, and must be construction with a [Status Code](status-code.md) as the first item, the Transaction ID of the Source Dispatch as the second item and the Triggering ID of the callback making the Answer as the third item. Engines should answer with a [400 Bad Dispatch](status-code.md#400-bad-dispatch) if the Answer Dispatch Resource is otherwise structured and with a [406 Not Acceptable](status-code.md#406-not-acceptable) if the Transaction ID or the Triggering ID are invalid.
 
 ---
 
