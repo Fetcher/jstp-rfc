@@ -79,7 +79,7 @@ A protocol-level, Answer Dispatch:
   "resource":   [
       400,                            // The status code. Shamelessly borrowed from HTTP
       "238vs39598gweorit340trwgewrt", // The Transaction ID
-      "4589sf34589ar453dth5467ugrte"  // The Triggering ID
+      "4589sf34589ar453dth5467ugrte"  // [optional] The Triggering ID. May not be present in 400 or 406 errors
     ],                                
   "token":      ["3434h5098asr34h3"],
   "timestamp":  1365647440759,
