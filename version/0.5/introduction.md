@@ -41,7 +41,7 @@ A regular JSTP looks like this:
                                       // in this one after the HTTP convention
   "resource":   ["foods", "pizza"],   // The selected resource which is to be retrieved (since the method is GET)
   "timestamp":  1365647440759,        // The milliseconds since the 1970-01-01 00:00:00.000 (also known as the UNIX timestamp)
-  "token":      ["3434h5098asr34h3"], // [optional] Just some id which the server will probably use to identify this request
+  "token":      ["3434h5098asr34h3"], // [optional] An UUID called the Transaction ID, used to track back Answer Dispatches
   "host":       ["pizza.com.ar"],     // [optional] The destination host to which the Dispatch is to be sent
   "body":       {                     // [optional] A message body
     "message": "Let the cheese melt!"       
@@ -77,9 +77,10 @@ A protocol-level, Answer Dispatch:
   "protocol":   ["JSTP", "0.4"],
   "method":     "ANSWER",
   "resource":   [
-      "238vs39598gweorit340trwgewrt", // The TransactionID
-      400
-    ],                                // The status code. Shamelessly borrowed from HTTP
+      400,                            // The status code. Shamelessly borrowed from HTTP
+      "238vs39598gweorit340trwgewrt", // The Transaction ID
+      "4589sf34589ar453dth5467ugrte"  // The Triggering ID
+    ],                                
   "token":      ["3434h5098asr34h3"],
   "timestamp":  1365647440759,
   "body": { 
