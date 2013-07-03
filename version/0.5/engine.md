@@ -169,6 +169,8 @@ If the callback generates more than one Answer with the Transaction/Triggering I
 
 If the callback emits a valid Answer once the Timeout if finished, the Engine must generate a 406 Not Acceptable Answer Dispatch and, if the Answer provided a callback, execute the callback with the Not Acceptable Dispatch.
 
+> When issuing a 406 Not Acceptable of 400 Bad Dispatch, it is recommended for Engines to include in the body a `message` field with the Status Code label and a `source` field with the Source Dispatch so to simplify debugging.
+
 ### Timeout
 
 Once all Subscriptions had been triggered, the Engine must start a timeout countdown (default may be 10 seconds) that, once finished, must look for Triggering IDs that have not been Answered and:
