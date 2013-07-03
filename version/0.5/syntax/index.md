@@ -112,6 +112,7 @@ There are special considerations for the Resource Header:
   - [404 Not Found](status-code.md#404-not-found)
   - [405 Method Not Allowed](status-code.md#405-method-not-allowed)
   - [406 Not Acceptable](status-code.md#406-not-acceptable)
+  - [409 Unrecognized Transport Protocol](status-code.md#409-unrecognized-transport-protocol)
   - [500 Internal Error](status-code.md#500-internal-error)
   - [501 Not Implemented](status-code.md#501-not-implemented)
   - [502 Unreachable Remote Host](status-code.md#502-unreachable-remote-host)
