@@ -107,9 +107,9 @@ This is also consistent since the disconnection happened between the first Engin
 Answer
 ------
 
-> Important update: Subscription Dispatches do not get ANSWERs
+> Important update: Subscription Dispatches get ANSWERs directly, and are not re bound with a Subscription to the corresponding ANSWER Endpoint.
 
-When an Engine process a Non-Subscription Dispatch to which the Emitter provided a Callback (or a Forwarded Dispatch with a Transaction ID), the Engine must generate and process a Subscription Dispatch to bind the Callback (or Remote Engine if it is Forwarded Dispatch) to and Endpoint for the ANSWER method and a Resource with the Transaction ID as the first item and a Wildcard as the second item.
+When an Engine process a Non-Subscription Dispatch to which the Emitter provided a Callback (or a Forwarded Dispatch with a Transaction ID), the Engine must generate and process a Subscription Dispatch to bind the Callback (or Remote Engine if it is Forwarded Dispatch) to an Endpoint for the ANSWER method and a Resource with the Transaction ID as the first item and a Wildcard as the second item.
 
 If the Dispatch is to be forwarded, it must forward the Dispatch. If the Dispatch is to be processed locally, the Engine must keep track of each triggered Subscription, and to do that, it must:
 
@@ -133,6 +133,11 @@ Once all Subscriptions had been triggered, the Engine must start a timeout count
 1. Generate and process and 504 Timeout Answer Dispatch for the unanswered Subscriptions
 2. RELEASE the Answer Subscription
 3. If the Source Dispatch was a Forwarded Dispatch, forward the RELEASE to the emitting Engine.
+
+
+### Subscription Dispatches
+
+An answer emitted for a Subscription Dispatch is forwarded to the Subscription Emitter even when the Answer Endpoint is not bound for the Callback. This implies that Subscriptions in the Subscription Table of the Engine must have the Transaction ID and Triggering ID so that the Subscription can be identified.
 
 Networking
 ----------
