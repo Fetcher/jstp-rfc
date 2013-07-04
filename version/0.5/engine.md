@@ -153,6 +153,12 @@ _todo_
 
 If a BIND Subscription Dispatch is emitted without callback, the Engine must abort the execution and might throw a `JSTPMissingCallbackException` but should not generate an Answer since there it no callback to send it.
 
+### Engines behind a proxy
+
+Automatic RELEASEs issued after a disconnection do not propagate in the infrastructure. This is all right since the same remote Engine making a remote Subscription that gets forwarded through the same proxy will attempt to bind the already bound endpoint: the destination Engine will simply ignore the attempt.
+
+This is also consistent since the disconnection happened between the first Engine and the gateway and there's no reason to propagate the RELEASE further.
+
 Answer
 ------
 
