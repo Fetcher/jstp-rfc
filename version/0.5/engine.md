@@ -137,7 +137,7 @@ Once all Subscriptions had been triggered, the Engine must start a timeout count
 
 ### Subscription Dispatches
 
-An answer emitted for a Subscription Dispatch is forwarded to the Subscription Emitter even when the Answer Endpoint is not bound for the Callback. This implies that Subscriptions in the Subscription Table of the Engine must have the Transaction ID and Triggering ID so that the Subscription can be identified.
+An answer emitted for a Subscription Dispatch is forwarded to the Subscription Emitter even when the Answer Endpoint is not bound for the Callback. This implies that Subscriptions in the Subscription Table of the Engine must have the Transaction ID so that the Subscription can be identified.
 
 Networking
 ----------
