@@ -1,4 +1,4 @@
-[Table of Contents](index.md) | [Previous: Syntax](syntax/syntax.md) | [Next: Engine](engine.md)
+[Table of Contents](index.md) | [Previous: Syntax](syntax/index.md) | [Next: Engine](engine.md)
 
 ---
 
@@ -63,4 +63,4 @@ The function callback _(todo)_
 
 ---
 
-[Table of Contents](index.md) | [Previous: Syntax](syntax/syntax.md) | [Next: Engine](engine.md)
+[Table of Contents](index.md) | [Previous: Syntax](syntax/index.md) | [Next: Engine](engine.md)
