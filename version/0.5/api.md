@@ -54,12 +54,16 @@ Breaking it down:
 JSTPDispatch
 ------------
 
-The object model of the Dispatch is a class called `JSTPDispatch`. The JSTPDispatch class should provide getter and setter methods for each of the Headers.
+The object model of the Dispatch is a class called `JSTPDispatch`. The JSTPDispatch class should provide getter and setter methods for each of the Headers. For now it should be just a dictionary-like structure native to the programming environment.
 
 JSTPCallback
 ------------
 
-The function callback _(todo)_
+The function callback should accept the arguments:
+
+- **JSTPEngine engine**: The engine that called the callback with the triggered dispatch.
+- **JSTPDispatch answer**: The answer, if present.
+- **JSTPDispatch dispatch**: The dispatch, if not an answer.
 
 ---
 
