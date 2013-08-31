@@ -18,7 +18,7 @@ JSTP also aims to maintain quality standards and conventions of modern web appli
 - JSTP is JSON, which makes it trivial to parse in modern programming languages.
 - The method and resource API closely resembles that of [Representational State Transfer (REST)](https://en.wikipedia.org/wiki/Representational_state_transfer), so is very natural to adopt for web developers.
 - Responses are sent asynchronously, thus making it fit for parallel processing and optimized for non-blocking, event-driven architectures.
-- Messages ( _Dispatches_ ) are symmetrical, so every application manages resources with the same API, whether be it behaving as server or as client.
+- Messages ( _Dispatches_ ) are symmetrical, so every application manages resources with the same API, whether it is behaving as server or as client.
 - Supports subscription ( _binding_ ) to events on remote hosts.
 - Supports seamless reflective subscription.
 - Arbitrary headers can be added with little to no hassle, making it easy to extend.
