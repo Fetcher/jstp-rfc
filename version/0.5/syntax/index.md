@@ -1,4 +1,4 @@
-[Table of Contents](../index.md) | [Previous: JSTP URI Scheme](../uri.md) | [Next: API](../api.md)
+[Table of Contents](../index.md) | [Previous: Vocabulary](../vocabulary.md) | [Next: API](../api.md)
 
 ---
 
@@ -6,8 +6,8 @@ Syntax
 ======
 
 
-JSTP Message: Dispatch
-----------------------
+Dispatch
+------------
 
 The JSTP Dispatch is both the message object that gets sent over the network and the event that gets triggered in the destination application. When is sent over the network, the Dispatch is a JSON serialization: within the Engine, it may be represented as a Dispatch object according to the programming language conventions.
 
@@ -128,4 +128,4 @@ Note that the Referer is not as much illegal as irrelevant, because the Emitter 
 
 ---
 
-[Table of Contents](../index.md) | [Previous: JSTP URI Scheme](../uri.md) | [Next: API](../api.md)
+[Table of Contents](../index.md) | [Previous: Vocabulary](../vocabulary.md) | [Next: API](../api.md)
