@@ -5,26 +5,35 @@
 Protocol Header
 ===============
 
-Summary
+The Protocol Header is required and has the same structure in all three Morphologies.
+
+The Protocol Header must be a JSON `array`. Every `element` of the `array` must be of `string` type. 
+
+#### Protocol Declaration
+
+The first `element` must be the "JSTP" `string`, and should be written in upper case although the Protocol Declaration is case insensitive. This element is _required_.
+
+#### Version Declaration
+
+The second `element` must be the version number corresponding to the JSTP version that the Dispatch Emitter is using. It must be a valid version number of a published JSTP specification. The version number should be used by Engines to process the Dispatch according to the specifications of the declared JSTP version. If the Engine is unable to process a Dispatch of the declared version it must send back a [505 JSTP Version Not Supported](https://github.com/southlogics/jstp-rfc/blob/master/version/0.5/syntax/status-code.md#505-jstp-version-not-supported) Exception Dispatch to the Emitter. An Engine running in [Quirks Mode](https://github.com/southlogics/jstp-rfc/blob/master/version/0.5/vocabulary.md#quirks-mode) may chose to ignore the Version Declaration and process the Dispatch anyway but this may give space for inconsistencies to appear. This element is _required_.
+
+#### Implementation Specifics Declaration
+
+An arbitrary number of `string elements` may be added afterwards by the Emitter in order to declare specifics about the implementations of any plugins that the Emitter is expecting for the Engine or a Remote Engine to use. Engines may ignore unrecognized Implementation Specifics Declarations or may ignore any `element` after the second element. This element is _optional_.
+
+Samples
 -------
 
-- Type: Array of Strings.
-- Elements: 
-  1. "JSTP" - A string stating that the Dispatch uses the JSTP protocol. This field is case insensitive.
-  2. <version-number> - A string representing the JSTP version number.
-- _Required_
-
-The protocol header represents the JSTP protocol version that the emitting Engine is using, and subsequently the JSTP version that the Dispatch is written in. It consists of an array of strings, being the first "jstp" and the second the version number.
-
-The version number should be used by the receiving Engine to process the Dispatch according to the specifications of the JSTP version. If the engine is unable to process the Dispatch version it must send an Exception Dispatch back to the source.
-
-> The protocol header may be extended with further data to specify JSTP extensions.
-
-Sample
-------
+Plain 0.5 Protocol Header:
 
 ```javascript
 "protocol": ["JSTP", "0.4"]
+```
+
+Protocol Header with Implementation Specifics Declarations:
+
+```javascript
+"protocol": ["JSTP", "0.5", "node-jstp-1.2.4"]
 ```
 
 ---
