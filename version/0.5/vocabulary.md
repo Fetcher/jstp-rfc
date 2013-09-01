@@ -5,25 +5,47 @@
 Vocabulary
 ==========
 
-[**Dispatch**](syntax/index.md): A JSTP message. Dispatches are both JSON serializations and the data structures representing them in the applications.
+> This section describes at a glance the meaning of several JSTP idioms. Most idioms are defined normatively in the next chapters but they are also presented here for faster access.
 
-[**Engine**](engine.md): An implementation of a JSTP client-server. Since JSTP is symmetric in design, implementations should be capables of both roles (thus _server_ being a misleading designation). Implementations may however be limited to one role due to the runtime enviroment (for example while in a web browser). Engine can also refer to an running instance of a client-server compliant with this specification.
+#### [Dispatch](syntax/index.md)
 
-**Emitter**: The generator of the Dispatch. If the Dispatch passed through a series of Gateways, it refers to the original generator. The Emitter can reside in the same application as the Engine where the Dispatch is being processed.
+A JSTP message. Dispatches are both JSON serializations and the data structures representing them in the applications.
 
-**Local Emitter**: An Emitter residing in the same application process as the current Engine.
+#### [Engine](engine.md)
 
-**Remote Emitter**: The Emitter of a Dispatch that was forwarded to the current Engine by another Engine.
+An implementation of a JSTP node, if possible with both client and server capabilities. Since JSTP is symmetric in design, implementations should be capables of both roles (thus _server_ being a misleading designation). Implementations may however be limited to one role due to the runtime enviroment (for example while in a web browser). Engine can also refer to an running instance of a client-server compliant with this specification.
 
-**Morphology**: A configuration of the Headers of a JSTP Dispatch designed to fulfill an specific purpose with differentiated Engine mechanics. Can be seen as a dialect of subset of JSTP.
+#### Emitter
 
-**Callback**: A programming routine (typically an object's method) to be called by a JSTP Engine when the Endpoint to which the Callback is Subscribed gets triggered by a Dispatch in process.
+The generator of the Dispatch. If the Dispatch passed through a series of Gateways, it refers to the original generator, usually a programming routine, such as the method of an object or an anonymous function. The Emitter can reside in the same application as the Engine where the Dispatch is being processed.
 
-**Subscription**: The binding of an Emitter-provided Callback to an Endpoint. The Subscription is created or terminated with Subscription Dispatches.
+#### Local Emitter
 
-**Subscription Table**: The list of all current Subscriptions in a certain Engine. 
+An Emitter residing in the same application process as the current Engine. Typically a programming routine, such as the method of an object or an anonymous function. Local Emitters may send their Dispatches via an internal API instead of a serialized JSON form but they are still considered Emitters since they are the originators of the message and should provide [callbacks](#callback) whenever necessary.
 
-**Answer Dispatch**: An Engine-generated Dispatch that represents a message to the original Emitter of a Dispatch to which this new one is responding. It is used primarily by Emitters to ensure reception and correct processing of their Dispatches. 
+#### Remote Emitter
+
+The Engine that sent a Dispatch that was forwarded over a network to the current Engine. In the case of a Dispatch that came over a network, Remote Emitter refers also to the programming routine that originated the Dispatch and any other Engine that forwarded it.
+
+#### Morphology
+
+A configuration of the Headers of a JSTP Dispatch designed to fulfill an specific purpose with differentiated Engine mechanics. Can be seen as a dialect or subset of JSTP.
+
+#### Callback
+
+A programming routine (typically an object's method or an anonymous function) to be called by a JSTP Engine when the Endpoint to which the Callback is Subscribed gets triggered by a Dispatch in process.
+
+#### Subscription
+
+The binding of an Callback to an Endpoint as described in the Endpoint Header of a BIND Subscription Dispatch. The Subscription is created or terminated with Subscription Dispatches.
+
+#### Subscription Table
+
+The list of all current Subscriptions in a certain Engine. 
+
+#### Answer Dispatch
+
+An Dispatch that represents a message to the original Emitter of a Dispatch to which this new one is responding. It is used primarily by Emitters to ensure reception and correct processing of their Dispatches. Engines can issue Answer Dispatches to communicate protocol level messages, including malformation errors or network problems.
 
 **Transaction ID**: A [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier) identifying the generated Dispatch. When used, it must be the first element of the Token Header. 
 
