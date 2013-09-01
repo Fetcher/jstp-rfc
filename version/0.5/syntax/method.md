@@ -5,19 +5,22 @@
 Method Header
 =============
 
-- Type: String
-- _Required_
+The Method Header is _required_ and has the same structure in all three Morphologies.
+
+The Method Header must be a JSON `string`. The `string` content must be one of the eight valid [Methods](#methods) in either upper or lower case.
 
 The method header represents the action to be performed on the identified resource.
 
 > JSTP methods are much like HTTP methods, in fact JSTP supports almost all of them. If you are a REST developer, most of this will be familiar.
 
-Method types
-------------
+Methods
+-------
 
-JSTP Methods can be categorized as _Subscription_ and _Non-Subscription_ methods. Subscription methods include BIND and RELEASE. Non-Subscription methods are the others: GET, POST, PUT, DELETE and PATCH.
+The JSTP Method determines the Dispatch Morphology. In that sense, methods can be categorized as belonging to the [_Regular Morphology_](#regular-morphology), the [_Subscription Morphology_](#subscription-morphology) or the [_Answer Morphology_](#answer-morphology).
 
-Non-Subscription methods deal with creating, querying, updating and destroying data. Any Non-Subscription Dispatch may be followed up by one or more PUT Dispatches sent from the target application back to the source application with the affected Resources in the Dispatch Body, but this is optional and left to the application's configuration.
+### Regular Morphology
+
+Regular Morphology Methods (_Regular Methods_) deal with creating, querying, updating and destroying data. Any Regular Dispatch may be followed up by one or more PUT Dispatches sent from the target application back to the source application with the affected Resources in the Dispatch Body, but this is optional and left to the application's configuration.
 
 GET, DELETE and PATCH methods in particular are known as Assuming Methods, in the sense that they assume the selected Resource to exist. An application may issue a protocol-level 404 Not Found Exception Dispatch back to the emitter in the case that the Resource is not available.
 
