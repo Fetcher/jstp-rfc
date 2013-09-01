@@ -1,4 +1,4 @@
-[Table of Contents](index.md) | [Previous: Introduction](introduction.md) | [Next: JSTP URI Scheme](uri.md)
+[Table of Contents](index.md) | [Previous: Introduction](introduction.md) | [Next: Syntax](syntax/index.md)
 
 ---
 
@@ -167,4 +167,4 @@ Under this configuration, Engines should answer a plain [400 Bad Dispatch](synta
 
 ---
 
-[Table of Contents](index.md) | [Previous: Introduction](introduction.md) | [Next: JSTP URI Scheme](uri.md)
+[Table of Contents](index.md) | [Previous: Introduction](introduction.md) | [Next: Syntax](syntax/index.md)
