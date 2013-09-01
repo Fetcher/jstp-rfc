@@ -22,9 +22,7 @@ Table of Contents
 
 1. [Introduction](introduction.md)
 2. [Vocabulary](vocabulary.md)
-4. [Syntax](syntax/index.md) 
-5. [API](api.md)
-6. [Engine](engine.md)
+3. [Syntax](syntax/index.md) 
 
 Older Versions
 --------------
