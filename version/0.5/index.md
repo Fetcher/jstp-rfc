@@ -13,10 +13,14 @@ Table of Contents
 
 1. [Introduction](introduction.md)
 2. [Vocabulary](vocabulary.md)
-3. [JSTP URI Scheme](uri.md)
 4. [Syntax](syntax/index.md) 
 5. [API](api.md)
 6. [Engine](engine.md)
+
+Related Specifications
+----------------------
+
+- [JSTP URI Scheme](https://github.com/jstp/jstp-uri)
 
 Older Versions
 --------------
