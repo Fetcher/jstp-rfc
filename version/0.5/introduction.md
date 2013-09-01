@@ -92,15 +92,11 @@ A protocol-level, Answer Dispatch:
 Notation
 --------
 
-JSTP Dispatches are designed from the bottom up to be as compatible with HTTP as possible. That's why they can be represented as URLs. 
+### [JSTP URI Scheme](https://github.com/jstp/jstp-uri)
 
-### [JSTP URI Scheme](uri.md)
+JSTP Dispatches are designed from the bottom up to be as compatible with HTTP as possible, so JSTP resources can be represented as URLs. 
 
-The first sample Dispatch may be represented as an URL like this:
-
-    jstp://pizza.com.ar/foods/pizza
-
-This notation is useful to quickly build JSTP Dispatches from user input, as writing down the JSON by hand can be quite a burden.
+More information can be found in the [JSTP URI Scheme Specification](https://github.com/jstp/jstp-uri)
 
 ### HTTP-like syntax
 
