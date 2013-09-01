@@ -26,10 +26,6 @@ Table of Contents
 5. [API](api.md)
 6. [Engine](engine.md)
 
-Related Specifications
-----------------------
-
-
 Older Versions
 --------------
 
