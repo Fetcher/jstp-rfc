@@ -121,6 +121,10 @@ The underlying network protocol that is used to send JSTP Dispatches (that is, s
 
 JSTP can also be transported in non full duplex protocols such as HTTP if a polling mechanism is in place.
 
+#### JSTP Transport Protocol Layer
+
+The protocol layer just below JSTP.
+
 #### Client
 
 An Engine starting a network connection to another Engine in a Transport Protocol. And Engine is instructed to do this by the data in the Host Header of a Dispatch (typically resolving the given address through [DHCP](http://www.ietf.org/rfc/rfc2131.txt) or [IP](http://en.wikipedia.org/wiki/Internet_Protocol) ).
