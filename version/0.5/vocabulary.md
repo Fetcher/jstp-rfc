@@ -63,6 +63,10 @@ The list of all current Subscriptions in a certain Engine.
 
 An Dispatch that represents a message to the original Emitter of a Dispatch to which this new one is responding. It is used primarily by Emitters to ensure reception and correct processing of their Dispatches. Engines can issue Answer Dispatches to communicate protocol level messages, including malformation errors or network problems.
 
+#### Answer Callback
+
+The actual programming routine to be executed when the Answer is received.
+
 #### Transaction ID
 
 An [UUID](http://tools.ietf.org/html/rfc4122) identifying the generated Dispatch. When used, it must be the first element of the Token Header. 
