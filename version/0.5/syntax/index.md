@@ -1,4 +1,4 @@
-[Table of Contents](../index.md) | [Previous: Vocabulary](../vocabulary.md) | [Next: API](../api.md)
+[Table of Contents](../index.md) | [Previous: Vocabulary](../vocabulary.md)
 
 ---
 
@@ -128,4 +128,4 @@ Note that the Referer is not as much illegal as irrelevant, because the Emitter 
 
 ---
 
-[Table of Contents](../index.md) | [Previous: Vocabulary](../vocabulary.md) | [Next: API](../api.md)
+[Table of Contents](../index.md) | [Previous: Vocabulary](../vocabulary.md)
