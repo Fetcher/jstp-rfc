@@ -7,7 +7,7 @@ Engine
 
 The JSTP Engine is a running instance of an actual implementation of JSTP. Applications can run several Engines listening in an arbitrary amount of ports in several Transport Protocols. This flexibility is one of the features of JSTP.
 
-An Engine must be able to perform certain basic tasks of a core functionality and offer at least a minimal API for application resources to consume. Both the basic functionality and the minimal API that are required for Engines are described in this section, which should be taken as a reference by implementation developers.
+An Engine must be able to perform certain basic tasks of a core functionality and offer at least a minimal API for application resources to consume. The [API is described extensively in the previous section](api.md). The basic functionality that is required for Engines is described in this section, which should be taken as a reference by developers of JSTP implementations.
 
 Processing
 ----------
