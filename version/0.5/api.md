@@ -12,21 +12,43 @@ For the API, the Engine is described as the `JSTPEngine` class, that JSTP librar
 
 ### JSTPEngine#dispatch
 
-The `#dispatch` instance method of the Engine handles the processing of the Dispatch. The function prototype of `JSTPEngine#dispatch` is as follows:
+The `#dispatch` instance method of the Engine runs the [Processing](https://github.com/southlogics/jstp-rfc/blob/master/version/0.5/engine.md#processing) of the Dispatch. The function prototype of `JSTPEngine#dispatch` is as follows:
 
 ```
-JSTPDispatch dispatch( JSTPDispatch dispatch [, void Function callback (JSTPEngine engine, JSTPDispatch answer [, JSTPDispatch triggering]) [, Object context ]])
+JSTPDispatch dispatch( 
+  JSTPDispatch dispatch 
+  [, void Function callback (
+    JSTPEngine engine, 
+    JSTPDispatch answer 
+    [, JSTPDispatch triggering]
+  ) 
+  [, Object context ]]
+)
 ```
 
-Lets break it down a little:
+#### Return value
 
-1. The return value of the `#dispatch` method must be a JSTPDispatch instance representing the same Dispatch that got processed, including all Header values filled in by the Engine, such as the Timestamp and the Protocol Headers. 
-2. The name of the method in the Engine instance must be `dispatch`.
-3. The first argument must be the partially or completely formed Dispatch to be processed.
+The return value of the `#dispatch` method must be a JSTPDispatch instance representing the same Dispatch that got processed, including all Header values filled in by the Engine, such as the Timestamp and the Protocol Headers.
+
+#### Method name
+
+The name of the method in the Engine instance should be `dispatch`.
+
+#### Required arguments
+
+The first argument must be the partially or completely formed `JSTPDispatch` to be processed. Since a JSTP Dispatch can be represented as a data structure, implementation may accept data structures other than an actual `JSTPDispatch` instance.
+
+#### Optional callback
+
+The optional function callback must be compliant with the `JSTPCallback` prototype. Since methods are not first member classes in many programming languages, it is not required for callbacks to be instances of any particular object.
+
+---
+**TODO** continue edition here
+
 4. The optional function callback must accept:
-  - [required] A `JSTPEngine` as the first argument. This will be the Engine executing the callback. Useful for both answers and subsequent Dispatches.
-  - [required] A `JSTPDispatch` as the second argument. This will be the ANSWER Dispatch if the callback is executed by an Answer Dispatch
-  - [required for BIND Subscription Dispatches only] A `JSTPDispatch` as the third argument. This will be the Dispatch that triggered the callback execution. If this callback is missing in a BIND Subscription Dispatch, the Dispatch is aborted with no Answer (since there is no callback to send the Answer). The Engine might throw a `JSTPMissingCallbackException`.
+  - _Required_. A `JSTPEngine` as the first argument. This will be the Engine executing the callback. Useful for both answers and subsequent Dispatches.
+  - _Required_. A `JSTPDispatch` as the second argument. This will be the ANSWER Dispatch if the callback is executed by an Answer Dispatch
+  - _Required for BIND Subscription Dispatches only_ A `JSTPDispatch` as the third argument. This will be the Dispatch that triggered the callback execution. If this callback is missing in a BIND Subscription Dispatch, the Dispatch is aborted with no Answer (since there is no callback to send the Answer). The Engine might throw a `JSTPMissingCallbackException`.
   
   The function callback should be present in every BIND Subscription Dispatch, since otherwise nothing will be bound to the Dispatch Endpoint.
   
