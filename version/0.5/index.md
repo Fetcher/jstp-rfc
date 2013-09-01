@@ -3,6 +3,15 @@ JSTP/0.5 - JSON Transfer Protocol version 0.5
 
 > This document is a work in progress. For discussion please refer to the [issue tracker](https://github.com/southlogics/jstp-rfc/issues) on this repository.
 
+Abstract
+--------
+
+### Related specifications
+
+[JSTP Engine Specification](https://github.com/jstp/jstp-engine): The JSON Transfer Protocol is the core standard in an two-specification suite completed by the [JSTP Engine Specification](https://github.com/jstp/jstp-engine). The version of both specifications is synced and roadmaps for both are elaborated in the same process.
+
+[JSTP URI Scheme](https://github.com/jstp/jstp-uri): An URI addressing specification for describing JSTP resources. Its ultimate aim is to describe JSTP with enough power to be used analogously as HTTP URLs are used by user agents for consuming HTTP resources.
+
 Roadmap
 -------
 
@@ -20,7 +29,6 @@ Table of Contents
 Related Specifications
 ----------------------
 
-- [JSTP URI Scheme](https://github.com/jstp/jstp-uri)
 
 Older Versions
 --------------
