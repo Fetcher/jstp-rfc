@@ -101,19 +101,33 @@ A Dispatch that was sent to this Engine by another Engine over a network.
 
 #### [Method](syntax/method.md)
 
-The action to be performed by re on the identified resource. It can be any of the valid method verbs: [GET](syntax/method.md#get), [POST](syntax/method.md#post), [PUT](syntax/method.md#put), [PATCH](syntax/method.md#patch), [DELETE](syntax/method.md#delete), [BIND](syntax/method.md#bind) or [RELEASE](syntax/method.md#release).
+The action to be performed by re on the identified resource. It can be any of the valid method verbs: [GET](syntax/method.md#get), [POST](syntax/method.md#post), [PUT](syntax/method.md#put), [PATCH](syntax/method.md#patch), [DELETE](syntax/method.md#delete), [BIND](syntax/method.md#bind), [RELEASE](syntax/method.md#release) or [ANSWER](syntax/method.md#answer).
 
-[**Resource**](syntax/resource.md): The address of an actionable resource within the target application.
+#### [Resource](syntax/resource.md)
 
-**Host**: The computer in which the engine is running. Not to be confused with the [Host Header](syntax/host.md).
+The JSTP address of an actionable resource within the target application. Analog with the [representational state transfer](http://en.wikipedia.org/wiki/Representational_state_transfer) resource definition.
 
-**JSTP Transport Protocol**: The base network protocol that is used to send JSTP Dispatches over a network. Currently the alternatives are TCP sockets or Websockets. JSTP can be transported in other lower-level protocol provided it is full duplex.
+#### Host
 
-**Client**: An Engine starting a network connection to another Engine in a Transport Protocol. And Engine is instructed to do this by the data in the Host Header of a Dispatch (typically resolving the given address through DNS or IP).
+The computer in which the engine is running. Not to be confused with the [Host Header](syntax/host.md).
 
-**Server**: An Engine attached to a server listening a port for a Transport Protocol. Note that the Engine can behave also as a Client and the Engine is not the Server per se but it is just attached to it.
+#### JSTP Transport Protocol
 
-**Virtual Host**: A target Engine that is described within an application using a domain name like address, but resides in the same application as the Emitter and does not require a network connection to be reached. Such a setup is extremely useful to keep concerns separated, since developers may want greater degree of control over the context in which the Dispatch is processed. Virtual Hosts provide the isolation benefits of different Engines without paying the penalties associated with network usage.
+The underlying network protocol that is used to send JSTP Dispatches (that is, strings with JSON encoded data) over a network. Currently the alternatives are TCP sockets or Websockets. JSTP can be transported in other lower-level protocol provided it is full duplex. 
+
+JSTP can also be transported in non full duplex protocols such as HTTP if a polling mechanism is in place.
+
+#### Client
+
+An Engine starting a network connection to another Engine in a Transport Protocol. And Engine is instructed to do this by the data in the Host Header of a Dispatch (typically resolving the given address through [DHCP](http://www.ietf.org/rfc/rfc2131.txt) or [IP](http://en.wikipedia.org/wiki/Internet_Protocol) ).
+
+#### Server
+
+An Engine attached to a server listening a port for a Transport Protocol. Note that the Engine can behave also as a Client and the Engine is not the Server per se but it is just attached to it.
+
+#### Virtual Host
+
+A target Engine that is described within an application using a domain name like address, but resides in the same application as the Emitter and does not require a network connection to be reached. Such a setup is extremely useful to keep concerns separated, since developers may want greater degree of control over the context in which the Dispatch is processed. Virtual Hosts provide the isolation benefits of different Engines without paying the penalties associated with network usage.
 
 **Inbound**: A JSTP Transport Protocol connection where the current engine has the server role.
 
