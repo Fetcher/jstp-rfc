@@ -159,7 +159,7 @@ An Answer Dispatch.
 
 #### Quirks Mode
 
-The configuration under which an Engine may ignore recoverable deviations from the recommendation and process the Dispatch anyway. Engines should anyway send [410 Deviation Warning](syntax/status-code.md#410-deviation-warning) answers to the emitters of non standard Dispatches.
+The configuration under which an Engine may ignore recoverable deviations from the recommendation and process the Dispatch anyway. 
 
 #### Strict Mode
 
