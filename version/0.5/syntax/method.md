@@ -30,70 +30,51 @@ Another example would be to retrieve a record from a database: a GET Dispatch to
 
 Unlike HTTP, JSTP GET may include a body: since there is no query string, conditions on the request need to be sent in the body. 
 
---- 
-CONTINUE
----
-
-### POST
+#### POST
 
 The POST method represents the directive to create a new record within the selected Resource. It usually is completed with a Body with data to be inserted in the newly created record.
 
 Following the previous example, a POST Dispatch may be issued to the Resource `["articles"]` with the Body `{"text": "New article"}` and the application may create a record with the given text. 
 
-### PUT
+#### PUT
 
-The PUT method represents the operation of inserting a record in the selected Resource. Unlike POST that selects the resource within which the record should be created, the Resource in a PUT Dispatch represents the exact address where the record should be created in the receiving application. The sent Body should replace any existing records in the Resource address.
+The PUT method represents the operation of inserting a record in the selected Resource. Unlike POST that selects the resource _within which_ the record should be created, the Resource in a PUT Dispatch represents the exact address where the record should be inserted by the receiving agent. The sent Body should replace any existing records in the Resource address.
 
 A PUT Dispatch may or may not feature a Body.
 
-For example, a PUT Dispatch with Resource `["links", 54]` and Body `{"href":"google.com"}` represents the directive to the application to create or update the record referenced by `["links", 54]` to contain the Body.
+For example, a PUT Dispatch with Resource `["links", 54]` and Body `{"href":"google.com"}` represents the directive to create or update the record referenced by `["links", 54]` with the `{"href":"google.com"}` Body.
 
-### PATCH
+#### PATCH
 
-The PATCH method represents the directive to update one or more properties of the selected Resource. 
+The PATCH method represents the directive to update one or more properties of the selected Resource. A PATCH Dispatch will usually carry a Body containing the properties to be updated and their corresponding values.
 
-For example, upon processing the following Dispatch:
-
-```javascript
-{
-  "protocol": ["JSTP", "0.4"],
-  "method": "PATCH",
-  "resource": ["papers", "physics", "quantum-mechanics"],
-  "timestamp": 1363410000,
-  "token": ["4sF45fRtra"],
-  "body": {
-    "higgs-boson-existence": true
-  }
-}
-``` 
-
-an application should update the `["papers", "physics", "quantum-mechanics"]` so that `higgs-boson-existence` is now equal to `true`.
-
-### DELETE
+#### DELETE
 
 The DELETE method represents the directive to destroy the selected Resource. 
 
-### BIND
+### Subscription Morphology 
 
-The BIND method represents the protocol-level directive to bind the emitting application to be notified upon the Processing of a Dispatch with a certain Method/Resource combination, as defined by the Endpoint pattern in the BIND Dispatch Header.
+Subscription Morphology Methods deal with hooking and unhooking endpoints.
 
-BIND Dispatches must carry an [Endpoint Header](endpoint.md) containing the pattern to which the Emitter is to be bound. The Emitter can be the application running the Engine or some Remote application.
+#### BIND
 
-BIND Dispatches may have a Body, since a previously bound Endpoint could have been configured to be triggered by the BIND Dispatch and may use the Body for some purpose. When used this way, the BIND method represents a session initialization for the Resources matched by the Endpoint, and its RELEASE counterpart, the finalization of the session.
+The BIND method represents the protocol-level directive to bind a callback to be notified upon the Processing of a Dispatch with a certain Method/Resource combination, as described by the Endpoint Pattern in the BIND Dispatch Endpoint Header.
 
-> For further details refer to the [Subscription](../engine.md#subscription) section.
+BIND Dispatches must carry an [Endpoint Header](endpoint.md) containing the pattern to which the Subscriber is to be bound. The Subscriber can be a resource within the application or some Remote Engine.
 
-### RELEASE
+When an outbound connection is lost to a server in which Subscriptions are active, the Engine should attempt periodically to reconnect and once reconnected, resend the BIND Dispatches for each of the active Subscriptions. This functionality is called auto rebinding and should be configurable along with the specific delay between re connection attempts.
 
-The RELEASE method represents the protocol-level directive to unbind the emitting appliation from the Endpoint. 
+#### RELEASE
 
-RELEASE Dispatches must carry an [Endpoint Header](endpoint.md) with the pattern to be unbound from. After a RELEASE Dispatch is processed, the Emitter will no longer be triggered when a Dispatch matching the Endpoint pattern is processed.
+The RELEASE method represents the protocol-level directive to unbind a callback from the Endpoint. 
 
-The RELEASE Dispatch Endpoint may match no existing Subscription. If that's the case, the Engine should send an [406 Unbound Endpoint Exception](exception.md#406-unbound-endpoint) Dispatch back to the Emitter. 
+RELEASE Dispatches must carry an [Endpoint Header](endpoint.md) with the pattern to be unbound from. After a RELEASE Dispatch is processed, the Callback must no longer be triggered when a Dispatch matching the Endpoint pattern is processed.
 
 RELEASE Dispatches may carry a Body by the same rationale as BIND Dispatches.
 
-> When a client disconnects from an Engine, the Engine will automatically create and process a Body-less RELEASE Dispatch for each of its active Subscriptions. This will prevent the subscriptions to be triggered when the client is not available. For further details refer to the [Subscription](../subscription.md) section.
+When a client disconnects from an Engine, the Engine must automatically create and process a Body-less RELEASE Dispatch for each of its active Subscriptions. This will prevent the subscriptions to be triggered when the client is not available. 
+
+### Answer Morphology
 
 ### ANSWER
 
