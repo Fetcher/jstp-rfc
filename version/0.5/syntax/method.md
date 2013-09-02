@@ -20,19 +20,19 @@ The JSTP Method determines the Dispatch Morphology. In that sense, methods can b
 
 ### Regular Morphology
 
-Regular Morphology Methods (_Regular Methods_) deal with creating, querying, updating and destroying data. Any Regular Dispatch may be followed up by one or more PUT Dispatches sent from the target application back to the source application with the affected Resources in the Dispatch Body, but this is optional and left to the application's configuration.
+Regular Morphology Methods (_Regular Methods_) deal with creating, querying, updating and destroying data. 
 
-GET, DELETE and PATCH methods in particular are known as Assuming Methods, in the sense that they assume the selected Resource to exist. An application may issue a protocol-level 404 Not Found Exception Dispatch back to the emitter in the case that the Resource is not available.
+#### GET
 
-> This JSTP specification does not describe the subsequent Dispatches that an application may issue after a successful Non-Subscription Dispatch, but future updates might.  
-
-### GET
-
-The GET method represents a request of data about the Resource. This is most obvious in an application providing access to a filesystem, where a Resource such as `["books"]` may return the listing of the `books` directory in the applications host.
+The GET method represents the request of data about the Resource. This is most obvious in an application providing access to a filesystem, where a Resource such as `["books"]` may return the listing of a `books` directory in the applications host.
 
 Another example would be to retrieve a record from a database: a GET Dispatch towards Resource `["articles", 356]` may retrieve the record with id `356` from the `articles` collection in the database.
 
 Unlike HTTP, JSTP GET may include a body: since there is no query string, conditions on the request need to be sent in the body. 
+
+--- 
+CONTINUE
+---
 
 ### POST
 
