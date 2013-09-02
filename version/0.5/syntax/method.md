@@ -76,13 +76,11 @@ When a client disconnects from an Engine, the Engine must automatically create a
 
 ### Answer Morphology
 
-### ANSWER
+#### ANSWER
 
-The ANSWER method represents the Answer to another Dispatch, identified by the Transaction ID as the second item in the Resource:
+The ANSWER method represents a response to another Dispatch. It is to be interpreted as a protocol-level response, representing whether the original Dispatch was successfully delivered and the status of the process originated by the original Dispatch. This status is described using [Status Codes](status-codes.md).
 
-The Resource Header is formalized for Answer Dispatches, and must be construction with a [Status Code](status-code.md) as the first item, the Transaction ID of the Source Dispatch as the second item and, if there is one, the Triggering ID of the callback making the Answer as the third item. Engines should answer with a [400 Bad Dispatch](status-code.md#400-bad-dispatch) if the Answer Dispatch Resource is otherwise structured and with a [406 Not Acceptable](status-code.md#406-not-acceptable) if the Transaction ID or the Triggering ID are invalid.
-
-> The Triggering ID shall not be present in 400 Bad Dispatch and 406 Not Acceptable Answers, because they are not processed but just sent directly to the provided Callback, if any.
+> For further discussion on the Answer Morphology read the sections on the [Resource Header](resource.md) and the [Token Header](token.md).
 
 ---
 
