@@ -48,13 +48,11 @@ The second `element` of the Resource must be the Transaction ID, a unique identi
 
 Answer Dispatches can only be issued to Source Dispatches that provide a Transaction ID in the Token Header. Engines should discard Answer Dispatches with a `null`, `true` or `false` Transaction IDs. 
 
----
-CONTINUE
----
-
 ### Triggering ID
 
 The third `element` of the Resource must be the Triggering ID, a unique identifier present in the Source Dispatch as the second `element` of the Token Header.
+
+Like is the case with Transaction IDs, Answer Dispatches can only be issued to Source Dispatches that provide a Triggering ID in the Token Header. Engines should discard Answer Dispatches with a `null`, `true` or `false` Triggering IDs. 
 
 ---
 
