@@ -5,16 +5,14 @@
 Timestamp Header
 ================
 
-- Type: Long Integer
-- Element: The time when the Dispatch was issued in the UNIX time stamp format
-- _Required_
+The Timestamp Header is _required_ and has the same structure in all the three Morphologies.
 
-The Timestamp header is a mandatory header that represents the time when the Dispatch was generated. Its value must be the [UNIX timestamp](http://en.wikipedia.org/wiki/Unix_time) in its _long integer_ form. Its rationale is to simplify logging, synchronization and processing. 
+The Timestamp Header must be a JSON `number`, representing the milliseconds elapsed since 1970-01-01 00:00:00.000 UTC, also known as the [UNIX Epoch](http://en.wikipedia.org/wiki/Unix_time). The value must represent the time of generation of the Dispatch and should be setted by the Emitters. 
 
-Since the Timestamp represents the time of generation, gateways must not change the timestamp. This will allow, among other things, to test application-level latency when the Dispatch is sent over a network.
+The Timestamp Header is there to provide a temporal dimension to Dispatches, since timing if of significance in distributed applications where messages may transit through various channels, and also because message creation time has proved to be an ubiquously useful datum for modern applications that deal with creation, maintainance and removal of resources.
 
-The Timestamp is meant to be used by applications in order to set the creation or modification time of the affected resources that result of Dispatch processing.
- 
+Engines behaving as Gateways must not alter the timestamp of the Dispatches when forwarding them to the next Host. The timestamp should provide an anchor to retrace a certain call through the network to simplify debugging, profiling and logging.
+
 ---
 
 [Syntax](index.md) | [Previous: Resource Header](resource.md) | [Next: Token Header](token.md)
