@@ -5,7 +5,7 @@
 Protocol Header
 ===============
 
-The Protocol Header is required and has the same structure in all three Morphologies.
+The Protocol Header is _required_ and has the same structure in all three Morphologies.
 
 The Protocol Header must be a JSON `array`. Every `element` of the `array` must be of `string` type. 
 
