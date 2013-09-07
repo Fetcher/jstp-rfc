@@ -133,10 +133,6 @@ An Engine starting a network connection to another Engine in a Transport Protoco
 
 An Engine attached to a server listening a port for a Transport Protocol. Note that the Engine can behave also as a Client and the Engine is not the Server per se but it is just attached to it.
 
-#### Virtual Host
-
-[in doubt] A target Engine that is described within an application using a domain name like address, but resides in the same application as the Emitter and does not require a network connection to be reached. Such a setup is extremely useful to keep concerns separated, since developers may want greater degree of control over the context in which the Dispatch is processed. Virtual Hosts provide the isolation benefits of different Engines without paying the penalties associated with network usage.
-
 #### Inbound
 
 A JSTP Transport Protocol connection where the current engine has the server role.
