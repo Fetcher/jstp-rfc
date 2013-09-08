@@ -24,7 +24,7 @@ An arbitrary number of `string elements` may be added afterwards by the Emitter 
 Samples
 -------
 
-Plain 0.5 Protocol Header:
+Plain 0.4 Protocol Header:
 
 ```javascript
 "protocol": ["JSTP", "0.4"]
