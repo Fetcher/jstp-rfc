@@ -7,7 +7,7 @@ Method Header
 
 The Method Header is _required_ and has the same structure in all three Morphologies.
 
-The Method Header must be a JSON `string`. The `string` content must be one of the eight valid [Methods](#methods) in either upper or lower case.
+The Method Header must be a JSON `string`. The `string` content must be one of the eight valid [Methods](#methods) in either upper or lower case. Upper case is preferred for HTTP compatibility.
 
 The method header represents the action to be performed on the identified resource.
 
@@ -82,6 +82,20 @@ The ANSWER method represents a response to another Dispatch. It is to be interpr
 
 > For further discussion on the Answer Morphology read the sections on the [Resource Header](resource.md) and the [Token Header](token.md).
 
+Samples
+-------
+
+Lower case GET:
+
+```javascript
+"method": "get"
+```
+
+Upper case ANSWER:
+
+```javascript
+"method": "ANSWER"
+```
 ---
 
 [Dispatch](index.md) | [Previous: Protocol Header](protocol.md) | [Next: Resource Header](resource.md)
