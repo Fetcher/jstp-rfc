@@ -13,6 +13,13 @@ The Timestamp Header is there to provide a temporal dimension to Dispatches, sin
 
 Engines behaving as Gateways must not alter the timestamp of the Dispatches when forwarding them to the next Host. The timestamp should provide an anchor to retrace a certain call through the network to simplify debugging, profiling and logging.
 
+Sample
+------
+
+```javascript
+"timestamp": 538147800365
+```
+
 ---
 
 [Syntax](index.md) | [Previous: Resource Header](resource.md) | [Next: Token Header](token.md)
