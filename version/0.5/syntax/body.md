@@ -5,12 +5,39 @@
 Body Header
 ===========
 
-- Type: Any JSON supported type.
-- _Optional_
+The Body Header is _optional_ and has the same structure in all three Morphologies.
 
-The body is the payload of the Dispatch. Its optional and can be issued with any method, including Subscription ones.
+The Body Header can be any type of JSON `value`.
 
-Its contents may vary: it can be a hash, an array, a scalar and even a null value. 
+The Body is the payload of the Dispatch and its contents and entirely up to applications to process.
+
+Samples
+-------
+
+Array of notes:
+
+```javascript
+"body":[
+  {"title":"Don't forget the milk","content":"Seriously, the milk!"},
+  {"title":"You buy the next lot","content":"Ok I'll buy it"}
+]
+```
+
+Plain string message:
+
+```javascript
+"body":"This message is clearly undisclosed"
+```
+
+Language shorcuts object:
+
+```javascript
+"body":{
+  "se":"Swedish",
+  "zh":"Chinese",
+  "mr":"Martian"
+}
+```
 
 ---
 
