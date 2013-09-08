@@ -7,7 +7,7 @@ Token Header
 
 The Token Header is _optional_ and has the same structure in all three Morphologies.
 
-The Token Header must be a JSON `array`. The `array` must have either one or two `elements`.
+The Token Header `pair` key must be `token` and the `value` must be a JSON `array`. The `array` must have either one or two `elements`.
 
 The Token Header is a Protocol-Level header, meaning that only Engines should set and use its content.
 
