@@ -120,6 +120,7 @@ There are special considerations for the Resource Header:
   - [503 Service Unavailable](status-code.md#503-service-unavailable)
   - [504 Timeout](status-code.md#504-timeout)
   - [505 JSTP Version Not Supported](status-code.md#505-jstp-version-not-supported)
+  - [506 Gateway Disabled](status-code.md#506-gateway-disabled)
 
 
 Note that the Referer is not as much illegal as irrelevant, because the Emitter of an Answer Dispatch is always known, but also because the actual Emitter of an Answer Dispatch is the Engine that called the resources subscribed to the original Dispatch.
