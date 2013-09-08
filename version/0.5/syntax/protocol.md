@@ -7,7 +7,7 @@ Protocol Header
 
 The Protocol Header is _required_ and has the same structure in all three Morphologies.
 
-The Protocol Header `pair` key must be "protocol", and the `value` must be a JSON `array`. Every `element` of the `array` must be of `string` type. 
+The Protocol Header `pair` key must be `protocol`, and the `value` must be a JSON `array`. Every `element` of the `array` must be of `string` type. 
 
 #### Protocol Declaration
 
