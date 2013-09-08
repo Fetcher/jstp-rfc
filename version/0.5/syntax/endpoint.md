@@ -32,6 +32,8 @@ The other `pair` must be the Resource Pattern pair. The JSON `string` key of the
 
 The order of the `elements` in the `array` is relevant since it must be used to check the Resource of the Dispatches processed by the Engine for a match.
 
+**WOW DONT FORGET THAT IN SUBSCRIPTION DISPATCHES THE ENDPOINT PATTERN IS MATCHED**
+
 #### Literal Resource Element
 
 A Literal Resource Element is any JSON `string` that is not a Resource Element Wildcard. It represents the exact same `string`.
