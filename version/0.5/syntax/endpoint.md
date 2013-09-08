@@ -1,4 +1,4 @@
-[Syntax](index.md) | [Previous: Body Header](host.md)
+[Syntax](index.md) | [Previous: Body Header](body.md) | [Next: Referer Header](referer.md)
 
 ---
 
@@ -117,4 +117,4 @@ The backslash character `\` escapes the pattern. For example `\*` will match exa
 
 ---
 
-[Syntax](index.md) | [Previous: Body Header](host.md)
+[Syntax](index.md) | [Previous: Body Header](body.md) | [Next: Referer Header](referer.md)
