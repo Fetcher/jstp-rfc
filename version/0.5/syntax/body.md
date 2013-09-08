@@ -7,7 +7,7 @@ Body Header
 
 The Body Header is _optional_ and has the same structure in all three Morphologies.
 
-The Body Header can be any type of JSON `value`.
+The Body Header `pair` key must be `body` and the `value` can be any type of JSON `value`.
 
 The Body is the payload of the Dispatch and its contents and entirely up to applications to process.
 
