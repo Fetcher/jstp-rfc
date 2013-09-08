@@ -5,6 +5,31 @@
 Endpoint Header
 ===============
 
+The Endpoint Header is _required_ in the Subscription Morphology and _illegal_ in both the Regular and Answer Morphologies.
+
+Subscription Morphology
+-----------------------
+
+The Endpoint Header must be a JSON `object` containing two `pairs`. 
+
+### Method Pattern
+
+One of the `pairs` must be the Method Pattern pair. The JSON `string` key of the Method Pattern must be "method" and the `value` must be a JSON `string` containing either a Literal Method or a Method Wildcard.
+
+#### Literal Method
+
+A Literal Method is any of the JSTP Methods.
+
+### Method Wildcard
+
+A Method Wildcard is the [`*` U+002A ASTERISK](http://www.unicode.org/charts/PDF/U0000.pdf) character.
+
+---
+
+**CONTINUE**
+
+---
+
 - Type: Object
 - Elements: `method` pattern with a string value and `resource` pattern with an array value.
 - _Required_: With `BIND` and `RELEASE`
