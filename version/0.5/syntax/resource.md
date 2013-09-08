@@ -38,7 +38,7 @@ The Resource Header must be a JSON `array` of three `elements`.
 
 ### [Status Code](status-code.md)
 
-The first `element` of the Resource must be a Status Code: that is, one of the defined three JSON `digits` combinations that is used to describe a certain status of the Answer.
+The first `element` of the Resource must be a Status Code: that is, a JSON `number` that is with one of the defined three JSON `digits` combinations that is used to describe a certain status of the Answer.
 
 The available Status Codes can be found in the [Status Code Definition](status-code.md).
 
@@ -53,6 +53,21 @@ Answer Dispatches can only be issued to Source Dispatches that provide a Transac
 The third `element` of the Resource must be the Triggering ID, a unique identifier present in the Source Dispatch as the second `element` of the Token Header.
 
 Like is the case with Transaction IDs, Answer Dispatches can only be issued to Source Dispatches that provide a Triggering ID in the Token Header. Engines should discard Answer Dispatches with a `null`, `true` or `false` Triggering IDs. 
+
+Samples
+-------
+
+Regular Resource pointing towards a book in a catalogue:
+
+```javascript
+"resource": ["J.L.Borges", "Ficciones", "Tlön, Uqbar, Orbis Tertius"]
+```
+
+Answer Resource with a 200 Ok Status Code:
+
+```javascript
+"resource": [200, "d34c6bec-4cf0-49bf-abc0-f980a1ca4a70", "81a0b3b8-1875-4e53-b6a8-7a398b6790a3"]
+```
 
 ---
 
