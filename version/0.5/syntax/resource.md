@@ -7,12 +7,14 @@ Resource Header
 
 The Resource Header represents the address of the selected resource.
 
+The Resource Header `pair` key must be `resource`.
+
 Regular Morphology
 ------------------
 
 The Resource Header is required in the Regular Morphology. It represents the resource on to which perform the action or query the data.
 
-The Resource Header must be a JSON `array` of one or more `elements`. 
+In the Regular Morphology, the Resource Header `value` must be a JSON `array` of one or more `elements`. 
 
 It can represent, for example:
 
@@ -34,7 +36,7 @@ Answer Morphology
 
 The Resource Header is required in the Answer Morphology and has a predefined element structure.
 
-The Resource Header must be a JSON `array` of three `elements`. 
+In the Answer Morphology, the Resource Header `value` must be a JSON `array` of three `elements`. 
 
 ### [Status Code](status-code.md)
 
