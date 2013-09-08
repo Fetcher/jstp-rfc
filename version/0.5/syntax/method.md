@@ -7,7 +7,7 @@ Method Header
 
 The Method Header is _required_ and has the same structure in all three Morphologies.
 
-The Method Header must be a JSON `string`. The `string` content must be one of the eight valid [Methods](#methods) in either upper or lower case. Upper case is preferred for HTTP compatibility.
+The Method Header `pair` key must be `method`, and the `value` must be a JSON `string`. The `string` content must be one of the eight valid [Methods](#methods) in either upper or lower case. Upper case is preferred for HTTP compatibility.
 
 The method header represents the action to be performed on the identified resource.
 
