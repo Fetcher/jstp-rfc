@@ -10,19 +10,40 @@ The Endpoint Header is _required_ in the Subscription Morphology and _illegal_ i
 Subscription Morphology
 -----------------------
 
-The Endpoint Header must be a JSON `object` containing two `pairs`. 
+The Endpoint Header `pair` key must be `endpoint` and the `value` must be a JSON `object` containing two `pairs`. 
+
+The Endpoint Pattern, composed by both the Method Pattern and the Resource Pattern, represents the combination of Method and Resource Headers that, if present in a Dispatch processed by the Engine to which this Dispatch is aimed, should trigger the Subscription that will result from the processing of the current Dispatch. In other words, the JSTP endpoint to which the Emitter wishes the provided Callback to be bound.
 
 ### Method Pattern
 
-One of the `pairs` must be the Method Pattern pair. The JSON `string` key of the Method Pattern must be "method" and the `value` must be a JSON `string` containing either a Literal Method or a Method Wildcard.
+One of the `pairs` must be the Method Pattern pair. The JSON `string` key of the Method Pattern must be "method" and the `value` must be a JSON `string` containing either a Literal Method or a Method Wildcard. 
 
 #### Literal Method
 
-A Literal Method is any of the JSTP Methods.
+A Literal Method is any of the JSTP Methods. It represents the corresponding method.
 
-### Method Wildcard
+#### Method Wildcard
 
-A Method Wildcard is the [`*` U+002A ASTERISK](http://www.unicode.org/charts/PDF/U0000.pdf) character.
+A Method Wildcard is the [`*` U+002A ASTERISK](http://www.unicode.org/charts/PDF/U0000.pdf) character and represents any JSTP Method.
+
+### Resource Pattern
+
+The other `pair` must be the Resource Pattern pair. The JSON `string` key of the Resource Pattern must be "resource" and the `value` must be a JSON `array` containing at least one JSON `string`, that must be either a Literal Resource Element or one of the Resource Element Wildcards.
+
+The order of the `elements` in the `array` is relevant since it must be used to check the Resource of the Dispatches processed by the Engine for a match.
+
+#### Literal Resource Element
+
+A Literal Resource Element is any JSON `string` that is not a Resource Element Wildcard. It represents the exact same `string`.
+
+#### Resource Element Wildcards
+
+**REMEMBER THE \ ESCAPE CHARACTER**
+
+##### Asterisk Element Wildcard
+
+The Asterisk Element Wildcard is the [`*` U+002A ASTERISK](http://www.unicode.org/charts/PDF/U0000.pdf) character and represents any possible value.
+
 
 ---
 
