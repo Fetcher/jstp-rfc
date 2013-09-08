@@ -27,7 +27,30 @@ The second `element` in a Destination Host must be either a JSON `number` or a J
 
 #### Transport Protocol Label
 
-The third `element` in a Destination Host must be a JSON `string` representing the Transport Protocol intended to be used to communicate with the destination Engine.
+The third `element` in a Destination Host must be a JSON `string` representing the Transport Protocol intended to be used to communicate with the destination Engine. The Label must be among those listed in this specification.
+
+##### `ws` Label
+
+The `ws` Label represents the [WebSocket Protocol](http://datatracker.ietf.org/doc/rfc6455/).
+
+##### `tcp` Label
+
+The `tcp` Label represents the [Transport Control Protocol](http://www.ietf.org/rfc/rfc793.txt).
+
+Samples
+-------
+
+Single Destination Host using WebSockets:
+
+```javascript
+"host":[["localhost",8000,"ws"]]
+```
+
+Several destinations:
+
+```javascript
+"host":[["curiosity.mars","33333","tcp"],["rock.leftside",22,"tcp"]]
+```
 
 ---
 
