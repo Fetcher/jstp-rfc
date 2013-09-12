@@ -32,7 +32,7 @@ The other `pair` must be the Resource Pattern pair. The JSON `string` key of the
 
 The order of the `elements` in the `array` is relevant since it must be used to check the Resource of the Dispatches processed by the Engine for a match.
 
-**WOW DONT FORGET THAT IN SUBSCRIPTION DISPATCHES THE ENDPOINT PATTERN IS MATCHED**
+In Subscription Dispatches, the Resource Pattern is not matched against the Resource Header because it is illegal; instead, it is matched against the Resource Pattern within the Dispatch Endpoint Header.
 
 #### Literal Resource Element
 
@@ -40,11 +40,22 @@ A Literal Resource Element is any JSON `string` that is not a Resource Element W
 
 #### Resource Element Wildcards
 
-**REMEMBER THE \ ESCAPE CHARACTER**
+##### Escape Character
+
+The [`\` U+005C REVERSE SOLIDUS](http://www.unicode.org/charts/PDF/U0000.pdf) is the Escape Character that can be used in the Resource Pattern Elements to specify that an otherwise Wildcard is actually a Literal Resource Element. The Escape Character is only recognized when used as the first character in the `string`.
 
 ##### Asterisk Element Wildcard
 
-The Asterisk Element Wildcard is the [`*` U+002A ASTERISK](http://www.unicode.org/charts/PDF/U0000.pdf) character and represents any possible value.
+The Asterisk Element Wildcard is the [`*` U+002A ASTERISK](http://www.unicode.org/charts/PDF/U0000.pdf) character and represents any possible value in the Asterisk Element Wildcard position in the Resource Pattern `array`. 
+
+The Asterisk Element Wildcard is valid in any position in the `array`, except after an Ellipsis Element Wildcard. Engines running Quirks Mode may ignore this and interpret an Asterisk Element Wildcard after an Ellipsis Element Wildcards as only an Ellipsis Element Wildcard, effectively ignoring the Asterisk Element Wildcard.
+
+##### Ellipsis Element Wildcard
+The Ellipsis Element Wildcard are three [`.` U+002E FULL STOP](http://www.unicode.org/charts/PDF/U0000.pdf) characters and represent any possible value over zero or more Resource Elements. That is, if only an Ellipsis Element Wildcard is present, any Resource with any amount of elements will be matched. This contrasts with the Asterisk Element Wildcard that only matches elements its own position. 
+
+The Ellipsis Element Wildcard is valid in the begining of the Resource Pattern `array` or after an Asterisk Element Wildcard, a Literal Resource Element or a Named Element Wildcard. It is illegal after another Ellipsis Element Wildcard but Engines running Quirks Mode may ignore this and interpret two consecutives Ellipsis Element Wildcards as only one.
+
+The Ellipsis Element Wildcard may precede a Literal Resource Element and in that case it represents
 
 
 ---
