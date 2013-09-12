@@ -50,13 +50,19 @@ The Asterisk Element Wildcard is the [`*` U+002A ASTERISK](http://www.unicode.or
 
 The Asterisk Element Wildcard is valid in any position in the `array`, except after an Ellipsis Element Wildcard. Engines running Quirks Mode may ignore this and interpret an Asterisk Element Wildcard after an Ellipsis Element Wildcards as only an Ellipsis Element Wildcard, effectively ignoring the Asterisk Element Wildcard.
 
+> Non-normative: The Asterisk Element Wildcard behavior is analog to that of the [Perl Regular Expressions `.` char](http://perldoc.perl.org/perlre.html).
+
 ##### Ellipsis Element Wildcard
-The Ellipsis Element Wildcard are three [`.` U+002E FULL STOP](http://www.unicode.org/charts/PDF/U0000.pdf) characters and represent any possible value over zero or more Resource Elements. That is, if only an Ellipsis Element Wildcard is present, any Resource with any amount of elements will be matched. This contrasts with the Asterisk Element Wildcard that only matches elements its own position. 
+
+The Ellipsis Element Wildcard are three [`.` U+002E FULL STOP](http://www.unicode.org/charts/PDF/U0000.pdf) characters and represent any possible value over zero or more Resource Elements, starting from the position of the the previously matched element, be it the beginning or the match for another Element. That is, if only an Ellipsis Element Wildcard is present, any Resource with any amount of elements will be matched, and if the Ellipsis Element Wildcard is preceded by another Resource Pattern Element, any amount of Resource Elements after the previous match will be matched and until the next non-Asterisk Element Wildcard match (see the Samples below for clarifications). This contrasts with the Asterisk Element Wildcard that only matches elements its own position. 
 
 The Ellipsis Element Wildcard is valid in the begining of the Resource Pattern `array` or after an Asterisk Element Wildcard, a Literal Resource Element or a Named Element Wildcard. It is illegal after another Ellipsis Element Wildcard but Engines running Quirks Mode may ignore this and interpret two consecutives Ellipsis Element Wildcards as only one.
 
-The Ellipsis Element Wildcard may precede a Literal Resource Element and in that case it represents
+The Ellipsis Element Wildcard may precede a Literal Resource Element and in that case it represents zero or more elements starting at the position of the Ellipsis Element Wildcard until the Literal Resource Element is found.
+ 
+> Non-normative: The Ellipsis Element Wildcard behavior is analog to that of the [non-greedy Perl Regular Expressions `*` char](http://perldoc.perl.org/perlre.html).
 
+##### Named Element Wildcard
 
 ---
 
