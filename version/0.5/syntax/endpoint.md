@@ -73,7 +73,76 @@ The Named Element Wildcard is valid in any position except between two Ellipsis 
 Samples
 -------
 
+Simple subscription and a matched Dispatch:
 
+```javascript
+// Subscription
+"endpoint": {
+  "method": "*",
+  "resource": ["*"]
+}
+
+// Matches
+"method": "GET",
+"resource": ["user"]
+```
+
+Named Element Wildcard and a matched Dispatch:
+
+```javascript
+// Subscription
+"endpoint": {
+  "method": "PUT",
+  "resource": ["article", ":title"]
+}
+
+// Matched
+"method": "PUT",
+"resource": ["article", "Great new series just released"]
+
+// The result would be 
+// "title": "Great new series just released"
+```
+
+Ellipsis Element Wildcard alone and matching Dispatches:
+
+```javascript
+// Subscription
+"endpoint": {
+  "method": "GET",
+  "resource": ["..."]
+}
+
+// Matches
+"method": "GET",
+"resource": ["book", "The Lord of the Rings"]
+
+// Matches
+"method": "GET",
+"resource": ["this", "is", "a", "very", "long", "resource"]
+```
+
+Ellipsis Element Wildcard between Literals and another Ellipsis Element Wildcard just before the ending:
+
+```javascript
+// Subscription
+"endpoint": {
+  "method": "POST",
+  "resource": ["path", "...", "text", "...", ":extension"]
+}
+
+// Matches
+"method": "POST",
+"resource": ["path", "folder", "internal", "text", "value", "txt"]
+//  The result would be
+// "extension": "txt"
+
+// Matches
+"method": "POST",
+"resource": ["path", "text", "md"]
+// The result would be
+// "extension": "md"
+```
 
 ---
 
