@@ -18,8 +18,7 @@ The key words "must", "must not", "required", "shall", "shall not", "should", "s
 
 An implementation is not compliant if it fails to satisfy one or more of the _must_ or _required_ level requirements for the protocols it implements. An implementation that satisfies all the _must_ or _required_ level and all the _should_ level requirements for its protocols is said to be "unconditionally compliant"; one that satisfies all the _must_ level requirements but not all the _should_ level requirements for its protocols is said to be "conditionally compliant."
 
-Roadmap
--------
+### Roadmap
 
 You can find the [version 0.5 Roadmap](https://github.com/southlogics/jstp-rfc/issues/17) and the updated status of its implementation as an [issue in the issue tracker](https://github.com/southlogics/jstp-rfc/issues/17) for the specification repository.
 
