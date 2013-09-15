@@ -8,23 +8,30 @@ Introduction
 
 The JSON Transfer Protocol (JSTP) is an application-level, symmetrical, asynchronous communication protocol for distributed computation systems that works with [JSON](http://www.json.org/) encoded messages. It is designed to be transported over various possible means, including plain [TCP](http://www.ietf.org/rfc/rfc793.txt), [HTTP](http://www.w3.org/Protocols/rfc2616/rfc2616.html) and [WebSocket](http://tools.ietf.org/html/rfc6455).
 
-JSTP is designed to:
+### Design goals
 
-- Facilitate distributed computing with an abstract, high level API inspired in HTTP
+- Facilitate general purpose, cross platform distributed computing with an abstract, high level API focused on creation, reading, updating and destroying operations.
 - Standarize interactions among applications connecting with each other playing different roles either as clients or servers.
+- Seamlessly integrate remote and local event driven capabilities.
 
-JSTP also aims to maintain quality standards and conventions of modern web applications:
+Key features that the protocol should contemplate, in order of importance:
 
-- Is readily avaible to modern browsers via [WebSockets](http://en.wikipedia.org/wiki/WebSocket).
-- JSTP is JSON, which makes it trivial to parse in modern programming languages.
-- The method and resource API closely resembles that of [Representational State Transfer (REST)](https://en.wikipedia.org/wiki/Representational_state_transfer), so is very natural to adopt for web developers.
-- Responses are sent asynchronously, thus making it fit for parallel processing and optimized for non-blocking, event-driven architectures.
-- Messages ( _Dispatches_ ) are symmetrical, so every application manages resources with the same API, whether it is behaving as server or as client.
-- Supports subscription ( _binding_ ) to events on remote hosts.
-- Supports seamless reflective subscription.
-- Arbitrary headers can be added with little to no hassle, making it easy to extend.
+1. **Symmetry**: JSTP messages should not change depending on whether the sender is behaving as server or client in the transport protocol. 
+2. **Event-driven**: JSTP should be structured around a subscription architecture that allows applications to react to the triggering of extensible events.
+3. **Actionability**: JSTP messages should represent actionable commands to be performed by the receiving party.
+4. **Asynchronicity**: One party may send zero or any amount of JSTP messages to the other and the other may send back or forward zero or any amount of messages.
+5. **Reflectiveness**: JSTP messages and subscriptions should be performable locally as they would be over a network.
+6. **Ubiquity**: It should be trivial to send JSTP messages accross semi-isolated networks using hosts as gateways.
+7. **Distributability**: It should be trivial to send the same JSTP message to any amount of parties.
 
-Hybrid distributed applications that connect server-side and user agent nodes can benefit greatly from using a single protocol accross the entire architecture.
+JSTP also aims to maintain quality standards and conventions of modern web applications. It attempts:
+
+- To be readily avaible to modern browsers via WebSocket and fallback nicely to HTTP polling.
+- To be trivial to parse in modern programming platforms. JSON as codification was chosen for that purpose.
+- To have a low entry barrier for new adopters. The method and resource API should closely resembles that of [Representational State Transfer (REST)](https://en.wikipedia.org/wiki/Representational_state_transfer) for that purpose.
+- To be extensible. As of version `0.5`, arbitrary headers can be added with little to no hassle.
+
+Hybrid distributed applications that connect server side and user agent nodes can benefit greatly from using a single protocol accross the entire architecture.
 
 ### Related specifications
 
