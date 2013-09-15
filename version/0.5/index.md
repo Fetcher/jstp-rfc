@@ -3,8 +3,28 @@ JSTP/0.5 - JSON Transfer Protocol version 0.5
 
 > This document is a work in progress. For discussion please refer to the [issue tracker](https://github.com/southlogics/jstp-rfc/issues) on this repository.
 
-Abstract
---------
+Introduction
+------------
+
+The JSON Transfer Protocol (JSTP) is an application-level, symmetrical, asynchronous communication protocol for distributed computation systems that works with [JSON](http://www.json.org/) encoded messages. It is designed to be transported over various possible means, including plain [TCP](http://www.ietf.org/rfc/rfc793.txt), [HTTP](http://www.w3.org/Protocols/rfc2616/rfc2616.html) and [WebSocket](http://tools.ietf.org/html/rfc6455).
+
+JSTP is designed to:
+
+- Facilitate distributed computing with an abstract, high level API inspired in HTTP
+- Standarize interactions among applications connecting with each other playing different roles either as clients or servers.
+
+JSTP also aims to maintain quality standards and conventions of modern web applications:
+
+- Is readily avaible to modern browsers via [WebSockets](http://en.wikipedia.org/wiki/WebSocket).
+- JSTP is JSON, which makes it trivial to parse in modern programming languages.
+- The method and resource API closely resembles that of [Representational State Transfer (REST)](https://en.wikipedia.org/wiki/Representational_state_transfer), so is very natural to adopt for web developers.
+- Responses are sent asynchronously, thus making it fit for parallel processing and optimized for non-blocking, event-driven architectures.
+- Messages ( _Dispatches_ ) are symmetrical, so every application manages resources with the same API, whether it is behaving as server or as client.
+- Supports subscription ( _binding_ ) to events on remote hosts.
+- Supports seamless reflective subscription.
+- Arbitrary headers can be added with little to no hassle, making it easy to extend.
+
+Hybrid distributed applications that connect server-side and user agent nodes can benefit greatly from using a single protocol accross the entire architecture.
 
 ### Related specifications
 
@@ -25,9 +45,8 @@ You can find the [version 0.5 Roadmap](https://github.com/southlogics/jstp-rfc/i
 Table of Contents
 -----------------
 
-1. [Introduction](introduction.md)
-2. [Vocabulary](vocabulary.md)
-3. [Syntax](syntax/index.md) 
+1. [Vocabulary](vocabulary.md)
+2. [Syntax](syntax/index.md) 
 
 Older Versions
 --------------
