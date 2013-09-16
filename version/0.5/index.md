@@ -1,9 +1,11 @@
-JSTP/0.5 - JSON Transfer Protocol version 0.5
-=============================================
+JSON Transfer Protocol: JSTP/0.5
+================================
 
-> This document is a work in progress. For discussion please refer to the [issue tracker](https://github.com/southlogics/jstp-rfc/issues) on this repository.
+This document specifies an indepently created communication standard aimed at the Internet community. 
 
-This document specifies an indepently created communication standard aimed at the Internet community. This document and the specified standard are released by the JSTP collaborators under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/deed).
+The JSON Transfer Protocol version described here is major version `0` and minor version `5`, refered to as `JSTP/0.5`.
+
+This document and the specified standard are released by the JSTP collaborators under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/deed).
 
 Introduction
 ------------
