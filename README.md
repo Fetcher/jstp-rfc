@@ -1,35 +1,16 @@
-JSTP: JSON Transfer Protocol
-============================
+JSON Transfer Protocol
+======================
 
-> Real Time Web: the Protocol
+JSTP is a symmetric and asynchronous communication protocol encoded in JSON that works over several transport protocols with persistent connections—or stateless connections with polling.
 
-JSTP is a modern, symmetric, asynchronous communication protocol in JSON that works over several transport protocols with persistent connections.
+JSTP aims to enable a stack that uses the same protocol in every layer.
 
-The JSTP premise/promise: 
+The current version of the recommendation is **[JSTP/0.5](version/0.5/index.md)**.
 
-> "A single protocol accross your entire server stack"
+### All versions
 
-Specifications
---------------
-
-- **Latest: [JSTP/0.5 Working Draft](version/0.5/index.md)**
+- **[JSTP/0.5](version/0.5/index.md)**—current version
 
 - [JSTP/0.4 Draft](version/0.4/index.md)
 
 - [JSTP/0.1 Draft](version/0.1/index.md)
-
-License
--------
-
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
