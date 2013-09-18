@@ -73,6 +73,28 @@ The `409` Status Code represents the Protocol-Level notification to the Emitter 
 
 It can only be issued by Engines.
 
+5xx Range
+---------
+
+Status Codes in the `5xx` Range represent errors caused by the Callback or the Engine that processed the Dispatch. Connection problems and version incompatibilities are indicated with codes in this range.
+
+### 500: Internal Error
+
+The `500` Status Code represents the Application-Level notification that the execution of the actions described in the Source Dispatch have failed because of reasons unrelated to JSTP. 
+
+It can only be issued by Callbacks.
+
+### 501: Not Implemented
+
+The `501` Status Code represents the Application-Level notification that the requested action is not yet supported by the receiver. It is an alternative notification to `404` where no subscription has been triggered: applications may subscribe to endpoints but notify that they have provided no support yet to the selected actions.
+
+### 502: Not Gateway
+
+---
+
+**CONTINUE**
+
+---
 
 
 
