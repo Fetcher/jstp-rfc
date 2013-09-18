@@ -88,22 +88,8 @@ It can only be issued by Engines.
 
 
 
-> For tolerance to malformed Dispatches in the engine implementation please see section [6.2.2] Tolerance and Quirks Mode
 
-404 Not Found
--------------
 
-_todo_ 
-
-406 Unbound Endpoint
---------------------
-
-_todo_
-
-409 Unrecognized Transport Protocol
------------------------------------
-
-This means that the Host Header features a Transport Protocol that is not supported by this implementation.
 
 502 Not Gateway
 ---------------
