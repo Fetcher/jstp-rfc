@@ -2,8 +2,8 @@
 
 ---
 
-Status Codes
-============
+JSTP Status Codes
+=================
 
 JSTP supports a vocabulary of Status Codes analog to that of [HTTP](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html), while reduced in quantity due both to Status Codes being less prominent in JSTP and many HTTP scenarios not applying in JSTP.
 
@@ -37,6 +37,37 @@ The `400` Status Code represents a Protocol-Level problem detected by the Engine
 
 The `400` Status Code can only be issued by Engines. Usually it will be sent back to faulty Local Emitters that provided a Callback. When a broken Dispatch is received over a network, incorrect JSON encoding or missing Transaction IDs may prevent the receiving Engine to address the Answer Dispatch correctly: in such case, Engines should send no Answer Dispatch. 
 
+Engines running in Quirks Mode may choose to ignore recoverable malformations that will otherwise merit a `400` Bad Dispatch Answer.
+
+### 401: Unauthorized
+
+The `401` Status Code represents an Application-Level indication that the Emitter is currently not authorized to request the processing of the Dispatch, but may if it provides the authentication credentials. There is currently no specification on how those credentials should be sent but this Status Codes remains distinct from `403` to indicate that although the Dispatch was rejected, credentials may allow the Emitter to be able to perform it successfully in the future.
+
+This Status Code can only be issued by Callbacks.
+
+### 403: Forbidden
+
+The `403` Status Code represents the Application-Level indication that the selected resource is not allowed for the Emitter to act on. 
+
+While this can be solved with credentials the `403` code is more drastic in that it does not suggest that the resource is actually accessible.
+
+### 404: Not Found
+
+The `404` Status Code represents the Protocol-Level indication that the selected resources triggered no subscription in the destination Engine, so nothing resulted from processing it.
+
+It can only be issued by Engines.
+
+### 405: Method Not Allowed
+
+The `405` Status Code represents a specific type of Dispatch malformation: it represents the notification that the value of the Method Header does not match any of the allowed Methods. 
+
+It can only be issued by Engines.
+
+### 406: Unbound Endpoint
+
+The `406` Status Code represents the Protocol-Level notification that the received RELEASE Dispatch does not match any current subscription. It should be issued by Engines when no subscription was matched by the RELEASE Dispatch. Since it is a Protocol-Level notification, it can only be issued by Engines.
+
+### 409: 
 
 
 
@@ -53,41 +84,6 @@ The `400` Status Code can only be issued by Engines. Usually it will be sent bac
 
 
 
-
-
-
-
-
-200: Ok
--------
-
-The 200 
-400 Bad Dispatch
-401 Unauthorized
-403 Forbidden
-404 Not Found
-405 Method Not Allowed
-409 Unrecognized Transport Protocol
-500 Internal Error
-501 Not Implemented
-502 Unreachable Remote Host
-505 JSTP Version Not Supported
-400 Bad Dispatch
-----------------
-
-- Code: 400
-- Message: Bad Dispatch
-
-The Bad Dispatch exception type should be sent when the processed Dispatch has one of the following problems:
-
-- Some required headers are missing 
-- The content of some required headers is missing or malformed
-- The engine was unable to parse the JSON serialization
-- Malformed Endpoint Header
-
-Since in either case the Dispatch is assumed to be unrecoverable, no Method nor Resource should be sent in the Exception Dispatch.
-
-> For the dis _todo_
 
 > For tolerance to malformed Dispatches in the engine implementation please see section [6.2.2] Tolerance and Quirks Mode
 
