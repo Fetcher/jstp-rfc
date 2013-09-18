@@ -97,32 +97,6 @@ The `501` Status Code represents the Application-Level notification that the req
 ---
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-502 Not Gateway
----------------
-
-_todo_
-
-505 JSTP Version Not Supported
-------------------------------
-
-_todo_
-
 ---
 
 [Back: Syntax](index.md)
