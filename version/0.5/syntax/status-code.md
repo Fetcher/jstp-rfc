@@ -67,8 +67,11 @@ It can only be issued by Engines.
 
 The `406` Status Code represents the Protocol-Level notification that the received RELEASE Dispatch does not match any current subscription. It should be issued by Engines when no subscription was matched by the RELEASE Dispatch. Since it is a Protocol-Level notification, it can only be issued by Engines.
 
-### 409: 
+### 409: Unrecognized Transport Protocol
 
+The `409` Status Code represents the Protocol-Level notification to the Emitter that the [Transport Protocol Label](host.md#transport-protocol-label) as defined in the Host Header to be processed by this Engine does not match any valid Transport Protocol. 
+
+It can only be issued by Engines.
 
 
 
