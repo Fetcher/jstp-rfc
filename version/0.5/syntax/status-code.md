@@ -88,7 +88,31 @@ It can only be issued by Callbacks.
 
 The `501` Status Code represents the Application-Level notification that the requested action is not yet supported by the receiver. It is an alternative notification to `404` where no subscription has been triggered: applications may subscribe to endpoints but notify that they have provided no support yet to the selected actions.
 
-### 502: Not Gateway
+### 502: Unreachable Remote Host
+
+The `502` Status Code represents the Protocol-Level notification that the remote Engine represented in the Host Header is not responding, be it because the address points nowhere or there is another type of network error.
+
+### 503: Invalid Remote Host
+
+The `503` Status Code represents the Protocol-Level notification that the remote Engine represented in the Host Header is reachable but is not answering in a manner that matches the protocol described in the Host Header Transport Protocol Label.
+
+### 504: Timeout
+
+The `504` Status Code represents the Protocol-Level notification that no ANSWER was issued by a Callback represented by a Triggering ID in the expected period of time (usually around 10 seconds) and so the Engine is firing the ANSWERs and releasing the endpoint for this ANSWER.
+
+It can only be issued by Engines.
+
+### 505: JSTP Version Not Supported
+
+The `505` Status Code represents the Protocol-Level notification that the current Engine is not able to process Dispatches for the JSTP version as described in the Protocol Header. This will result in the Dispatch not being at all processed further than reading the Protocol Header version.
+
+It can only be issued by Engines.
+
+### 506: Gateway Disabled
+
+TODO 
+
+The `506` Status Code represents the Protocol-Level notification that the Dispatch Host data  current Engine has i
 
 ---
 
