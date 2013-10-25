@@ -117,7 +117,7 @@ There are special considerations for the Resource Header:
   - [500 Internal Error](status-code.md#500-internal-error)
   - [501 Not Implemented](status-code.md#501-not-implemented)
   - [502 Unreachable Remote Host](status-code.md#502-unreachable-remote-host)
-  - [503 Service Unavailable](status-code.md#503-service-unavailable)
+  - [503 Invalid Remote Host](status-code.md#503-invalid-remote-host)
   - [504 Timeout](status-code.md#504-timeout)
   - [505 JSTP Version Not Supported](status-code.md#505-jstp-version-not-supported)
   - [506 Gateway Disabled](status-code.md#506-gateway-disabled)
