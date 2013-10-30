@@ -55,8 +55,8 @@ You can find the [version 0.5 Roadmap](https://github.com/southlogics/jstp-rfc/i
 
 ### Previous versions
 
-- [JSTP/0.4 Specification](../0.4/index.md)
-- [JSTP/0.1 Specification](../0.1/index.md)
+- [JSTP/0.4 Specification](../0.4/index.md) (incomplete)
+- [JSTP/0.1 Specification](../0.1/index.md) (incomplete)
 
 > Pseudo versions [0.2](version/pseudo0.2.md) and [0.3](version/pseudo0.3.md) were not described but represent modular updates prior to version 0.4.
 
