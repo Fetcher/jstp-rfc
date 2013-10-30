@@ -32,7 +32,7 @@ JSTP also aims to maintain quality standards and conventions of modern web appli
 
 - To be readily avaible to modern browsers via WebSocket and fallback nicely to HTTP polling.
 - To be trivial to parse in modern programming platforms. JSON as codification was chosen for that purpose.
-- To have a low entry barrier for new adopters. The method and resource API should closely resembles that of [Representational State Transfer (REST)](https://en.wikipedia.org/wiki/Representational_state_transfer) for that purpose.
+- To have a low entry barrier for new adopters. The method and resource API should closely resemble that of [Representational State Transfer (REST)](https://en.wikipedia.org/wiki/Representational_state_transfer) for that purpose.
 - To be extensible. As of version `0.5`, arbitrary headers can be added with little to no hassle.
 
 Hybrid distributed applications that connect server side and user agent nodes can benefit greatly from using a single protocol accross the entire architecture.
