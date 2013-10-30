@@ -110,16 +110,7 @@ It can only be issued by Engines.
 
 ### 506: Gateway Disabled
 
-TODO 
-
-The `506` Status Code represents the Protocol-Level notification that the Dispatch Host data  current Engine has i
-
----
-
-**CONTINUE**
-
----
-
+The `506` Status Code represents the Protocol-Level notification that the current Engine is configured not to forward Dispatches with a Host Header automatically.
 
 ---
 
