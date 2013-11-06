@@ -61,7 +61,9 @@ It can only be issued by Engines.
 
 The `405` Status Code represents a specific type of Dispatch malformation: it represents the notification that the value of the Method Header does not match any of the allowed Methods. 
 
-It can only be issued by Engines.
+It can only be issued by Engines. 
+
+This circumstance will only be reported in Strict Mode, since in Quirks Mode any method is legal.
 
 ### 406: Unbound Endpoint
 
