@@ -1,4 +1,4 @@
-[Syntax](index.md) | [Previous: Timestamp Header](timestamp.md) | [Next: Host Header](host.md)
+[Syntax](index.md) | [Previous: Timestamp Header](timestamp.md) | [Next: To Header](to.md)
 
 ---
 
@@ -32,4 +32,4 @@ UUID v4 Transaction ID/Triggering ID pair:
 
 ---
 
-[Syntax](index.md) | [Previous: Timestamp Header](timestamp.md) | [Next: Host Header](host.md)
+[Syntax](index.md) | [Previous: Timestamp Header](timestamp.md) | [Next: To Header](to.md)
