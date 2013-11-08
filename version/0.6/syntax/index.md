@@ -30,10 +30,10 @@ All JSTP native headers are case-insensitive, but it is strongly recommended for
 - [**Resource** Header](resource.md)
 - [**Timestamp** Header](timestamp.md)
 - [**Token** Header](token.md)
-- [**Host** Header](host.md)
+- [**To** Header](to.md)
 - [**Body** Header](body.md)
 - [**Endpoint** Header](endpoint.md)
-- [**Referer** Header](referer.md)
+- [**From** Header](from.md)
 
 ### Extensions 
 
