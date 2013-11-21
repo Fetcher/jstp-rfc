@@ -1,9 +1,9 @@
 JSON Transfer Protocol: JSTP/0.6 Working Draft
 ==============================================
 
-This document specifies an indepently created communication standard aimed at the Internet community. 
+This document specifies an independently created communication standard aimed at the Internet community. 
 
-The JSON Transfer Protocol version described here is major version `0` and minor version `6`, refered to as `JSTP/0.6`.
+The JSON Transfer Protocol version described here is major version `0` and minor version `6`, referred to as `JSTP/0.6`.
 
 This document and the specified standard are released by the JSTP collaborators under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/deed).
 
@@ -15,7 +15,7 @@ The JSON Transfer Protocol (JSTP) is an application-level, symmetrical, asynchro
 ### Design goals
 
 - Facilitate general purpose, cross platform distributed computing with an abstract, high level API focused on creation, reading, updating and destroying operations.
-- Standarize interactions among applications connecting with each other playing different roles either as clients or servers.
+- Standardize interactions among applications connecting with each other playing different roles either as clients or servers.
 - Seamlessly integrate remote and local event driven capabilities.
 
 Key features that the protocol should contemplate, in order of importance:
@@ -25,21 +25,21 @@ Key features that the protocol should contemplate, in order of importance:
 3. **Actionability**: JSTP messages should represent actionable commands to be performed by the receiving party.
 4. **Asynchronicity**: One party may send zero or any amount of JSTP messages to the other and the other may send back or forward zero or any amount of messages.
 5. **Reflectiveness**: JSTP messages and subscriptions should be performable locally as they would be over a network.
-6. **Ubiquity**: It should be trivial to send JSTP messages accross semi-isolated networks using hosts as gateways.
+6. **Ubiquity**: It should be trivial to send JSTP messages across semi-isolated networks using hosts as gateways.
 7. **Distributability**: It should be trivial to send the same JSTP message to any amount of parties.
 
 JSTP also aims to maintain quality standards and conventions of modern web applications. It attempts:
 
-- To be readily avaible to modern browsers via WebSocket and fallback nicely to HTTP polling.
+- To be readily available to modern browsers via WebSocket and fallback nicely to HTTP polling.
 - To be trivial to parse in modern programming platforms. JSON as codification was chosen for that purpose.
 - To have a low entry barrier for new adopters. The method and resource API should closely resemble that of [Representational State Transfer (REST)](https://en.wikipedia.org/wiki/Representational_state_transfer) for that purpose.
 - To be extensible. As of version `0.5`, arbitrary headers can be added with little to no hassle.
 
-Hybrid distributed applications that connect server side and user agent nodes can benefit greatly from using a single protocol accross the entire architecture.
+Hybrid distributed applications that connect server side and user agent nodes can benefit greatly from using a single protocol across the entire architecture.
 
 ### Related specifications
 
-[JSTP Engine Specification](https://github.com/jstp/jstp-engine): The JSON Transfer Protocol is the core standard in an two-specification suite completed by the [JSTP Engine Specification](https://github.com/jstp/jstp-engine). The version of both specifications is synced and roadmaps for both are elaborated in the same process.
+[JSTP Engine Specification](https://github.com/jstp/jstp-engine): The JSON Transfer Protocol is the core standard in an two-specification suite completed by the [JSTP Engine Specification](https://github.com/jstp/jstp-engine). The version of both specifications is synced and road maps for both are elaborated in the same process.
 
 [JSTP URI Scheme](https://github.com/jstp/jstp-uri): An URI addressing specification for describing JSTP resources. Its ultimate aim is to describe JSTP with enough power to be used analogously as HTTP URLs are used by user agents for consuming HTTP resources.
 
