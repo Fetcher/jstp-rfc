@@ -39,7 +39,7 @@ Hybrid distributed applications that connect server side and user agent nodes ca
 
 ### Related specifications
 
-[JSTP Engine Specification](https://github.com/jstp/jstp-engine): The JSON Transfer Protocol is the core standard in an two-specification suite completed by the [JSTP Engine Specification](https://github.com/jstp/jstp-engine). The version of both specifications is synced and road maps for both are elaborated in the same process.
+[JSTP Engine Specification](https://github.com/jstp/jstp-engine): The JSON Transfer Protocol is the core standard in an specification suite completed by the [JSTP Engine Specification](https://github.com/jstp/jstp-engine). The version of both specifications is synced and road maps for both are elaborated in the same process.
 
 [JSTP URI Scheme](https://github.com/jstp/jstp-uri): An URI addressing specification for describing JSTP resources. Its ultimate aim is to describe JSTP with enough power to be used analogously as HTTP URLs are used by user agents for consuming HTTP resources.
 
